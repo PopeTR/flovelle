@@ -1,0 +1,14 @@
+<div class="col-12 col-md-6 col-lg-4">
+      <% @fsubscriptions.each do |fsubscription| %>
+          <div class="card-trip">
+            <div class="card-trip-infos">
+              <div>
+                <h2><%=fsubscription.id%></h2>
+                <p>Size of Bouquet: <%=fsubscription.size%></p>
+                <p>Number of deliveries per month: <%=fsubscription.frequency%></p>
+                <p>€<%=fsubscription.price%></p>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
