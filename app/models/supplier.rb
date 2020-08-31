@@ -1,5 +1,5 @@
 class Supplier < ApplicationRecord
   belongs_to :user
   has_many :orders
-  validates :name, :address, :email, presence: true
+  validates :name, :address, :zipcode, :email, presence: true
 end
