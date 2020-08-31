@@ -1,2 +1,17 @@
 <h1>Fsubscriptions#index</h1>
 <p>Find me in app/views/fsubscriptions/index.html.erb</p>
+
+<div class="col-12 col-md-6 col-lg-4">
+      <% @flower_subscriptions.each do |flower_subscription| %>
+          <div class="card-trip">
+            <div class="card-trip-infos">
+              <div>
+                <h2><%=flower_subscription.id%></h2>
+                <p>Size of Bouquet: <%=flower_subscription.size%></p>
+                <p>Number of deliveries per month: <%=flower_subscription.frequency%></p>
+                <p>€<%=flower_subscription.price%></p>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
