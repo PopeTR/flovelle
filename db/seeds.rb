@@ -1,7 +1,34 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+user1 = User.create(name: 'Boris Becker', address: 'Amsterdam Noord', zipcode: '1022HG', phone_number: '06 1234 5678' role: 'customer' )
+user2 = User.create(name: 'Tim Henman', address: 'Dutch Lane, Amersfoort', zipcode: '3822AW' role: 'customer' )
+user3 = User.create(name: 'Andy Murray', address: 'Heineken Lane, Utrecht', zipcode: '1082MD', role: 'customer' )
+user4 = User.create(name: 'Martina Navratalova', address: 'Amstel Lane, Amsterdam', zipcode: '1011AB', role: 'customer' )
+user5 = User.create(name: 'Serena Williams', address: 'Serena Lane, Amsterdam', zipcode: '1082MM', role: 'customer' )
+
+manager1 = User.create(name: 'Steffi Graf', address: 'Clog Lane, Amsterdam', zipcode: '1011KT', role: 'manager' )
+
+supplier1 = Supplier.create(name: 'Aalsmeer', address: 'Aalsmeer lane, Aalsmeer', zipcode: '1431GZ', email: 'aalsmeer@flowers.com')
+supplier2 = Supplier.create(name: 'Chelsea', address: 'Chelsea lane, London', zipcode: 'N52RT', email: 'chelsea@flowers.com')
+supplier3 = Supplier.create(name: 'Flowery Florist', address: 'Flower lane, Zandvoort', zipcode: '2024JD', email: 'zandvoort@flowers.com')
+
+subscription1 = Fsubscription.create(size: 'small', frequency: 1, price: '25', user_id: user1)
+subscription2 = Fsubscription.create(size: 'small', frequency: 2, price: '25', user_id: user2)
+subscription3 = Fsubscription.create(size: 'small', frequency: 4, price: '25', user_id: user3)
+subscription4 = Fsubscription.create(size: 'medium', frequency: 1, price: '40', user_id: user4)
+subscription5 = Fsubscription.create(size: 'medium', frequency: 2, price: '40', user_id: user5)
+subscription6 = Fsubscription.create(size: 'medium', frequency: 4, price: '40', user_id: user1)
+subscription7 = Fsubscription.create(size: 'medium', frequency: 1, price: '40', user_id: user2)
+subscription8 = Fsubscription.create(size: 'large', frequency: 1, price: '55', user_id: user3)
+subscription9 = Fsubscription.create(size: 'large', frequency: 2, price: '55', user_id: user4)
+subscription10 = Fsubscription.create(size: 'large', frequency: 4, price: '55', user_id: user5)
+
+order1 = Order.create(supplier_id: supplier1, subscription_id: subscription1)
+order2 = Order.create(supplier_id: supplier2, subscription_id: subscription2)
+order3 = Order.create(supplier_id: supplier3, subscription_id: subscription3)
+order4 = Order.create(supplier_id: supplier1, subscription_id: subscription4)
+order5 = Order.create(supplier_id: supplier2, subscription_id: subscription5)
+order6 = Order.create(supplier_id: supplier3, subscription_id: subscription6)
+order7 = Order.create(supplier_id: supplier1, subscription_id: subscription7)
+order8 = Order.create(supplier_id: supplier2, subscription_id: subscription8)
+order9 = Order.create(supplier_id: supplier3, subscription_id: subscription9)
+order10 = Order.create(supplier_id: supplier1, subscription_id: subscription10)
