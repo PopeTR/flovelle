@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_133717) do
+ActiveRecord::Schema.define(version: 2020_08_31_162134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "fsubscriptions", force: :cascade do |t|
+  create_table "flower_subscriptions", force: :cascade do |t|
     t.string "size"
     t.integer "frequency"
     t.integer "price"
@@ -23,16 +23,15 @@ ActiveRecord::Schema.define(version: 2020_08_31_133717) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_fsubscriptions_on_user_id"
+    t.index ["user_id"], name: "index_flower_subscriptions_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.text "feedback"
     t.bigint "supplier_id", null: false
-    t.bigint "fsubscription_id", null: false
+    t.bigint "flower_subscription_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["fsubscription_id"], name: "index_orders_on_fsubscription_id"
+    t.index ["flower_subscription_id"], name: "index_orders_on_flower_subscription_id"
     t.index ["supplier_id"], name: "index_orders_on_supplier_id"
   end
 
@@ -66,8 +65,8 @@ ActiveRecord::Schema.define(version: 2020_08_31_133717) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "fsubscriptions", "users"
-  add_foreign_key "orders", "fsubscriptions"
+  add_foreign_key "flower_subscriptions", "users"
+  add_foreign_key "orders", "flower_subscriptions"
   add_foreign_key "orders", "suppliers"
   add_foreign_key "suppliers", "users"
 end

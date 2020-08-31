@@ -1,6 +1,6 @@
-class CreateFsubscriptions < ActiveRecord::Migration[6.0]
+class CreateFlowerSubscriptions < ActiveRecord::Migration[6.0]
   def change
-    create_table :fsubscriptions do |t|
+    create_table :flower_subscriptions do |t|
       t.string :size
       t.integer :frequency
       t.integer :price
