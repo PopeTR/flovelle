@@ -3,4 +3,23 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def about
+  end
+
+  def flowers
+  end
+
+  def new_feedback
+
+  end
+
+  def create_feedback
+
+  end
+
+  def contact
+
+  end
+
 end
