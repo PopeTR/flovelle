@@ -1,0 +1,111 @@
+.container-forms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:1000px;
+  width: 100%;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0, #fff 100%), url(https://images.unsplash.com/photo-1554400928-c233e2fc4d7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2775&q=80);
+
+
+}
+
+.container-signup {
+  width: 550px;
+  top: 25px;
+  left: 660px;
+  padding: 50px 50px 30px 50px;
+  box-shadow: 0 1px 6px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 20px;
+  color: white!important;
+  background-blend-mode: color-dodge;
+  border-color: white;
+    font-size: 2rem;
+  }
+
+
+.btn {
+  font-family: "Poppins", "sans-serif";
+  font-size: 18px;
+  color: #F9F9F9;
+  border: solid 1px;
+  background-color: #ffacb7;
+  border-radius: 40px;
+  height: 55px;
+  width: 120px;
+
+}
+
+div.shared {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.shared a {
+  font-size: 18px;
+  opacity: 1.5;
+  font-weight: lighter;
+  font-family: "Poppins", "sans-serif";
+  color: #F9F9F9;
+
+}
+
+.shared :hover {
+  text-decoration: underline;
+}
+
+h2 {
+  font-family: "Poppins", "sans-serif";
+  font-size: 34px;
+  padding-bottom: 22px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 1.0rem;
+    font-size: 18px;
+}
+
+input.form-input {
+  font-family: "Poppins", "sans-serif";
+  font-size: 18px;
+  color: white;
+
+}
+
+input.form-control {
+  border-bottom: 1px solid white;
+  background-color: transparent !important;
+  color: white;
+}
+
+.form-control:hover{
+  border-bottom: 1px solid white;
+  background-color: transparent !important;
+  color: white;
+
+}
+
+.form-text {
+  color: #b9b9b2!important;
+  opacity: 1.5;
+  font-size: 18px;
+}
+
+.remember_me {
+  color: #ffacb7;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+justify:center;
+}
+
+.form-check {
+    position: relative;
+    display: flex;
+    padding-left: 2.25rem;
+}
