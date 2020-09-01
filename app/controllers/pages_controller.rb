@@ -11,15 +11,14 @@ class PagesController < ApplicationController
   end
 
   def new_feedback
-
   end
 
   def create_feedback
-
   end
+
 
   def contact
 
   end
-
 end
+
