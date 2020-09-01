@@ -1,8 +1,6 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<div class="container">
-  <h1>This is a test</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis alias voluptatibus dolorem corporis consequuntur est quos suscipit odit ipsa nostrum aperiam veritatis temporibus modi, at quaerat! Quibusdam iste ducimus doloribus.</p>
-  <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary" %>
+<div id="hero">
+  <%= video_tag "lavender.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%>
 </div>

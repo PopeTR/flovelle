@@ -1,12 +1,41 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,200');
+
+.navbar.navbar-clean {
+  background: #fff;
+  border-radius: 0;
+  border-bottom: 2px solid $my-blue;
+  color: #8f8f8f;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar.navbar-clean .navbar-brand {
+  font-weight: 200;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar.navbar-clean a {
+  color: #8f8f8f;
 }
+
+.container-nav {
+  margin: 0 100px;
+  width: 100%;
+}
+
+.navbar-links {
+  padding: 24px 24px 8px 24px;
+  margin: auto;
+  justify-content: space-evenly;
+  display: flex;
+  width: 100%;
+  margin: 0px, 30px;
+}
+
+.navbar-header {
+  display: flex;
+  justify-content: center;
+  padding-top: 13px;
+}
+
+.navbar {
+  border-bottom: 1.5px solid $my-blue;
+}
+
