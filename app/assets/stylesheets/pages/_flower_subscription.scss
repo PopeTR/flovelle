@@ -1,0 +1,142 @@
+// .field-columns {
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// }
+
+.columns {
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.content-status {
+	width: 100%;
+	padding: 20px 0;
+	background-color: lightyellow;
+}
+
+.start-subscription {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 10px;
+}
+
+.content-status ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	li {
+		list-style: none;
+		max-width: 70px;
+		text-align: center;
+		padding: 5px 5px;
+		width: 100%;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 10px;
+		border: solid 1px lightgrey;
+	}
+}
+
+.full-black-border {
+	border: solid 1px black !important;
+}
+
+// #subscription-product-info #product-type .product-cards-showcase {
+	// display: block;
+// }
+
+#product-type {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#product-type {
+	.product-cards-showcase {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	// width: 70px;
+	flex-wrap: wrap;
+    }
+}
+
+.start-subscription {
+	text-align: center;
+}
+
+.product-card {
+	width: 466px;
+	margin-right: 20px;
+	// box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+	// border: solid 1px black;
+	padding: 10px;
+	text-align: center;
+}
+
+.main-title {
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 40px;
+	border-bottom: solid 1px black;
+}
+
+
+.product-customize-size {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #000;
+	li {
+		list-style: none;
+		text-align: center;
+		padding: 5px 15px;
+		margin: 0 2px;
+		border: solid 1px black;
+	}
+}
+
+.product-customize-frequency {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #000;
+	li {
+		list-style: none;
+		text-align: center;
+		padding: 5px 5px;
+		margin: 0 2px;
+		border: solid 1px black;
+		border-radius: 40px;
+		display: inline-block;
+	}
+}
+
+.product-customize-dates {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #000;
+	li {
+		list-style: none;
+		text-align: center;
+		padding: 5px 5px;
+		margin: 0 2px;
+		border: solid 1px black;
+		border-radius: 40px;
+		display: inline-block;
+	}
+}
+
