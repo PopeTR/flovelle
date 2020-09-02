@@ -1,6 +1,7 @@
 class FlowerSubscriptionsController < ApplicationController
   def index
     @flower_subscriptions = FlowerSubscription.all
+    @flower_subscription = FlowerSubscription.new
   end
 
   def show
