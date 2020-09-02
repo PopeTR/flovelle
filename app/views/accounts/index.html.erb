@@ -1,31 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="column">
-      <h3> <strong> Personal Information </strong> </h3>
-      <div class="border-bottom">
-        <p> <strong> Name </strong> </p>
-        <p><%=current_user.name%></p>
-      </div>
-      <div class="border-bottom">
-        <p> <strong> E-Mail </strong> </p>
-        <p><%=current_user.email%></p>
-      </div>
-      <div class="border-bottom">
-        <p> <strong> Phone Number </strong> </p>
-        <p>+48 76 4278 3829</p>
-      </div>
-      <div class="border-bottom">
-        <p> <strong> Adress </strong> </p>
-        <p><%=current_user.address%></p>
-      </div>
-      <div class="border-bottom">
-        <p> <strong> ZIP </strong> </p>
-        <p><%=current_user.zipcode%></p>
-      </div>
-      <div class="border-bottom">
-       <p><%=current_user.flower_subscriptions.first.size%><p>
-        <p><%=current_user.flower_subscriptions.first.frequency%><p>
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <h3> <strong> Personal Information </strong> </h3>
+        <div class="border-bottom">
+          <p> <strong> Name </strong> </p>
+          <p id="black-p"><i class="fas fa-user"></i> <%=current_user.name%></p>
         </div>
+        <div class="border-bottom">
+          <p> <strong> E-Mail </strong> </p>
+          <p id="black-p"><i class="fas fa-envelope"></i> <%=current_user.email%></p>
+        </div>
+        <div class="border-bottom">
+          <p> <strong> Phone Number </strong> </p>
+          <p id="black-p"><i class="fas fa-phone-alt"> </i></i> +48 76 4278 3829</p>
+        </div>
+        <div class="border-bottom">
+          <p> <strong> Adress </strong> </p>
+          <p id="black-p"><i class="fas fa-map-marker-alt"></i> <%=current_user.address%>, <%=current_user.zipcode%></p>
+        </div>
+          <div class="card-product">
+            <img src="https://images.unsplash.com/photo-1577090727079-a854293d7cd6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" />
+            <div class="card-product-infos">
+              <p><strong>Your subscription</strong></p>
+              <p id="black-p">A <%=current_user.flower_subscriptions.first.size%> boquet once a week </p>
+            </div>
+          </div>
       </div>
       <div class="column">
         <div class="simple-calendar">
@@ -35,4 +39,5 @@
         </div>
       </div>
     </div>
-</div>
+  </div>
+</body>
