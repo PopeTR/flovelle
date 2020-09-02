@@ -3,13 +3,13 @@ Supplier.destroy_all
 FlowerSubscription.destroy_all
 Order.destroy_all
 
-user1 = User.create!(name: 'Boris Becker', email: 'boris@gmail.com', password: 'password', address: 'Amsterdam Noord', zipcode: '1022HG', phone_number: '06 1234 5678', role: 'customer')
-user2 = User.create(name: 'Tim Henman', email: 'tim@gmail.com', password: 'password', address: 'Dutch Lane, Amersfoort', zipcode: '3822AW', phone_number: '06 2829 1229', role: 'customer')
-user3 = User.create(name: 'Andy Murray', email: 'andy@gmail.com', password: 'password', address: 'Heineken Lane, Utrecht', zipcode: '1082MD', phone_number: '06 5392 2192', role: 'customer')
-user4 = User.create(name: 'Martina Navratalova', email: 'martina@gmail.com', password: 'password', address: 'Amstel Lane, Amsterdam', phone_number: '06 2913 3011', zipcode: '1011AB', role: 'customer')
-user5 = User.create(name: 'Serena Williams', email: 'serena@gmail.com', password: 'password', address: 'Serena Lane, Amsterdam', phone_number: '06 9428 2831', zipcode: '1082MM', role: 'customer')
+user1 = User.create!(first_name: 'Boris', last_name: 'Becker', email: 'boris@gmail.com', password: 'password', address: 'Amsterdam Noord', zipcode: '1022HG', phone_number: '06 1234 5678', role: 'customer')
+user2 = User.create(first_name: 'Tim', last_name: 'Henman', email: 'tim@gmail.com', password: 'password', address: 'Dutch Lane, Amersfoort', zipcode: '3822AW', phone_number: '06 2829 1229', role: 'customer')
+user3 = User.create(first_name: 'Andy', last_name: 'Murray', email: 'andy@gmail.com', password: 'password', address: 'Heineken Lane, Utrecht', zipcode: '1082MD', phone_number: '06 5392 2192', role: 'customer')
+user4 = User.create(first_name: 'Martina', last_name: 'Navratalova', email: 'martina@gmail.com', password: 'password', address: 'Amstel Lane, Amsterdam', phone_number: '06 2913 3011', zipcode: '1011AB', role: 'customer')
+user5 = User.create(first_name: 'Serena', last_name: 'Williams', email: 'serena@gmail.com', password: 'password', address: 'Serena Lane, Amsterdam', phone_number: '06 9428 2831', zipcode: '1082MM', role: 'customer')
 
-manager1 = User.create(name: 'Steffi Graf', email: 'steffi@gmail.com', password: 'password', address: 'Clog Lane, Amsterdam', zipcode: '1011KT', role: 'manager')
+manager1 = User.create(first_name: 'Steffi', last_name: 'Graf', email: 'steffi@gmail.com', password: 'password', address: 'Clog Lane, Amsterdam', zipcode: '1011KT', role: 'manager')
 
 supplier1 = Supplier.create(name: 'Aalsmeer', address: 'Aalsmeer lane, Aalsmeer', zipcode: '1431GZ', email: 'aalsmeer@flowers.com', user_id: manager1.id)
 supplier2 = Supplier.create(name: 'Chelsea', address: 'Chelsea lane, London', zipcode: 'N52RT', email: 'chelsea@flowers.com', user_id: manager1.id)
