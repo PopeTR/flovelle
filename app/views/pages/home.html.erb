@@ -1,35 +1,100 @@
 <div class="container-home">
   <section class="child-home page1">
-  <div id="hero">
-    <%= video_tag "lavender.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%>
-  </div>
+    <div id="hero">
+      <%= video_tag "lavender.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%>
+    </div>
 
-  <div class="header-home">
-    <%= image_tag "whitelogo.png", width: 150, class: "header-img"%>
-    <h1>Fresh Flowers, To Your Door, Every Week</h1>
-    <i class="fas fa-chevron-down"></i>
-  </div>
-</section>
+    <div class="header-home">
+      <%= image_tag "whitelogo.png", width: 150, class: "header-img"%>
+      <h1>Fresh Flowers, To Your Door, Every Week</h1>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
 
 
   <section class="child-home page2">
     <div class="container-howitworks">
-      <div class="card-header">
-        <h3>How it works</h3>
+      <div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1495231916356-a86217efff12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80);">
       </div>
-      <div class="cards">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/3820994/pexels-photo-3820994.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-          Select your seasonal flowers from our local growers
-        </div>
+      <div class="card-header">
+        <h1>How it works</h1>
+      </div>
 
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1597937913627-6fc09b8a662a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
-          Your box of flowers will arrive with information on the local supplier
-        </div>
+      <div class="row">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card-trip">
+              <div class="card-logo">
+                <%= image_tag "farmer.png", width: 50, class: "card-img"%>
+               </div>
+              <div class="card-trip-infos">
+                <div>
+                  <h2>Select your seasonal flowers from our local growers</h2>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533616688419-b7a585564566?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
-          Enjoy your flowers and recycle your box with us on your next delivery
-        </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card-trip">
+              <div class="card-logo">
+                <%= image_tag "delivery.png", width: 50, class: "card-img"%>
+              </div>
+              <div class="card-trip-infos">
+                <div>
+                  <h2>Your box of flowers will arrive with information on the local supplier</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card-trip">
+              <div class="card-logo">
+                <%= image_tag "Sunflower.png", width: 50, class: "card-img"%>
+              </div>
+              <div class="card-trip-infos">
+                <div>
+                  <h2>Enjoy your flowers and recycle your box on next delivery</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="chevron">
+        <i class="fas fa-chevron-down"></i>
       </div>
     </div>
   </section>
+
+<section class="child-home page3">
+  <div class="big-container">
+    <div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1569880153113-76e33fc52d5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
+    </div>
+
+    <div class="home-farmer">
+      <div class="container-booking">
+        <h1>We choose the best flowers of the season for you to arrange at home.</h1>
+        <div id="container-button">
+          <a href="/flowers">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Our Flowers</span>
+          </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="child-home page4">
+
+  <div class="wrapper-container">
+    <%= image_tag "purplelogo.png", class: "logo-footer" %>
+  </div>
+  <%= render 'shared/footer' %>
+</section>
+
 </div>

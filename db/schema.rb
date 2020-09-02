@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_162134) do
+ActiveRecord::Schema.define(version: 2020_09_02_095001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 2020_08_31_162134) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "delivery_date"
+    t.string "delivery_day"
+    t.string "time_of_day"
     t.index ["user_id"], name: "index_flower_subscriptions_on_user_id"
   end
 
@@ -56,11 +59,12 @@ ActiveRecord::Schema.define(version: 2020_08_31_162134) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
     t.string "phone_number"
     t.string "address"
     t.string "zipcode"
     t.string "role"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

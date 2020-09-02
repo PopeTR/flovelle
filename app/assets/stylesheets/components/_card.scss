@@ -1,55 +1,99 @@
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  height: 200px;
-  margin: 30px;
-
+.col-3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 25%;
+  max-width: 25%;
+  margin-bottom: 20px;
 }
 
-.card-category {
+.container {
+  max-width: 100%;
+  padding: 0px;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 20px;
+  height: 243px;
+  border-radius: 10px;
+}
+
+.card-logo {
+  height: 50%;
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 40px 25px 0px;
+}
+
+.card-img {
+  height: 100%;
+  object-fit: contain;
+
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 20px;
+}
+
+
+.card-trip-infos h2 a {
+  font-size: 20px;
+}
+
+.card-trip .card-trip-infos {
   text-align: center;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  color: white;
+    margin-top: 36px;
+    padding: 19px 32px;
+    border-top: 3px solid $my-blue;
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.row {
+  margin: 20px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.container-howitworks {
+  height: calc(100vh - 444px);
+}
+
+@media (max-width: 576px) {
+  .card-trip {
+    height: 95px;
+    border: 3px solid $my-blue;
+    border-radius: 15px;
+  }
+  .card-logo {
+    height: 0px;
+    padding: 0px;
+  }
+
+  .card-trip .card-trip-infos {
+    border-top: none;
+    padding: 23px 15px 23px 15px;
+    margin-top: 0px;
+  }
+
+  .card-img {
+    height: 0%;
   }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
