@@ -14,10 +14,11 @@
 
 .card-trip {
   overflow: hidden;
-  background: white;
+  background: rgba(255,255,255,0.9);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 20px;
   height: 243px;
+  border-radius: 10px;
 }
 
 .card-logo {
@@ -71,7 +72,7 @@
 }
 
 .container-howitworks {
-  height: calc(100vh - 350px);
+  height: calc(100vh - 444px);
 }
 
 @media (max-width: 576px) {
