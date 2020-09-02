@@ -1,17 +1,19 @@
 <div class="container-forms">
-  <div class="container-signup">
-    <h2>Resend confirmation instructions</h2>
+  <div class="col-lg-6 col-sm-9">
 
-    <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <div class="container-signup">
+      <h2>Resend confirmation instructions</h2>
+
+      <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
       <%= f.error_notification %>
       <%= f.full_error :confirmation_token %>
 
       <div class="form-inputs">
         <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
-                    input_html: { autocomplete: "email" } %>
+        required: true,
+        autofocus: true,
+        value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+        input_html: { autocomplete: "email" } %>
       </div>
 
       <div class="form-actions">
@@ -22,6 +24,7 @@
         <%= render "devise/shared/links" %>
 
       </div>
+    </div>
+    <% end %>
   </div>
-        <% end %>
 </div>
