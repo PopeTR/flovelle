@@ -38,6 +38,7 @@
 .card-trip h2 {
   font-size: 16px;
   margin: 0;
+  color: black;
 }
 
 .card-trip p {
@@ -71,9 +72,7 @@
   padding-bottom: 0 !important;
 }
 
-.container-howitworks {
-  height: calc(100vh - 444px);
-}
+
 
 @media (max-width: 576px) {
   .card-trip {
