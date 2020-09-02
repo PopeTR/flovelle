@@ -120,3 +120,14 @@
   font-size: 58px;
   padding-top: 55px;
 }
+.wrapper-container {
+  width: 100%;
+  height: calc(100vh - 136px);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.logo-footer {
+  width: 17vw;
+}
