@@ -64,6 +64,17 @@
 
 }
 
+.chevron {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.chevron .fa-chevron-down {
+  margin-top: 77px;
+}
+
 .child-home {
   scroll-snap-align: center;
   position: relative;
