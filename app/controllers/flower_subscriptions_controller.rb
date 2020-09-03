@@ -1,4 +1,6 @@
 class FlowerSubscriptionsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index]
+
   def index
     @flower_subscriptions = FlowerSubscription.all
   end
