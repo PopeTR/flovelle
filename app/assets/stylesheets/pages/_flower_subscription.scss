@@ -88,6 +88,37 @@
 	text-align: center;
 }
 
+.form-check {
+	list-style: none;
+	text-align: center;
+	padding: 5px 15px;
+	border: solid 1px black;
+	width: 260px;
+	justify-content: center;
+}
+
+.form-check-label {
+	// border: 1px solid black;
+	// padding: 5px;
+	// margin: 8px 10px;
+	img {
+		height: 260px;
+		width: 220px;
+	}
+}
+
+.form-check-input:checked ~ label {
+	background-color: black;
+	color: white;
+}
+.form-check-input.radio_buttons {
+	display: none;
+}
+
+.radio_buttons {
+	text-align: center;
+}
+
 .product-customize-flowers {
 	.row-flowers {
 		display: flex;
@@ -106,8 +137,13 @@
 		height: 260px;
 		width: 240px;
 		padding: 10px;
+		object-fit: cover;
 	}
 }
+
+.flower-subscription-images { 
+display: grid;
+ }
 
 .flower {
 	.flower-text {
@@ -127,11 +163,9 @@
 	margin: 0 auto;
 	padding-top: 20px;
 	border-top: 1px solid #000;
-	li {
-		float: left;
+	.form-check {
 		list-style: none;
 		text-align: center;
-		padding: 5px 15px;
 		border: solid 1px black;
 		width: 260px;
 	}
@@ -144,7 +178,7 @@
 	margin: 0 auto;
 	padding-top: 20px;
 	border-top: 1px solid #000;
-	li {
+	ul {
 		list-style: none;
 		text-align: center;
 		padding: 5px 5px;
@@ -155,14 +189,14 @@
 }
 
 .product-customize-dates {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
 	margin: 0 auto;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	border-top: 1px solid #000;
-	li {
+	ul {
 		list-style: none;
 		text-align: center;
 		padding: 5px 5px;
@@ -172,13 +206,23 @@
 	}
 }
 
+.form-check {
+	padding: 0;
+}
+
+.form-check label {
+	width: 100%;
+height: 100%;
+padding: 5px 15px;
+}
+
 .product-customize-dates-timeslot {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
 	padding-bottom: 20px;
-	li {
+	ul {
 		list-style: none;
 		text-align: center;
 		padding: 5px 5px;
