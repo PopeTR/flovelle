@@ -38,10 +38,6 @@ ActiveRecord::Schema.define(version: 2020_09_03_134643) do
     t.bigint "flower_subscription_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "state"
-    t.string "flower_subscription_sku"
-    t.integer "amount_cents", default: 0, null: false
-    t.string "checkout_session_id"
     t.index ["flower_subscription_id"], name: "index_orders_on_flower_subscription_id"
     t.index ["supplier_id"], name: "index_orders_on_supplier_id"
   end
