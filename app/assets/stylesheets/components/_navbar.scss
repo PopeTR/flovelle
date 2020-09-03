@@ -55,9 +55,10 @@
 
 .navbar {
   border-bottom: 1.5px solid $my-blue;
-  position: sticky;
+  position: fixed;
+  transition: top 1s;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
   background-color: #f9f9f9;
   width: 100%;
 }
