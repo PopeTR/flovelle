@@ -4,10 +4,9 @@ padding-bottom: 100px;
 }
 
 .simple-calendar {
-  width: 600px;
-  margin-left: 30px;
   .day {
   }
+
   .wday-0 {
     background-color: #f9f9f9;
     font-family: "Poppins", "sans-serif";
@@ -23,7 +22,7 @@ padding-bottom: 100px;
     border: none;
   }
   .wday-2 {
-    background-color: #6886c5;
+    background-color: rgba(104, 134, 197, 0.7);
     font-family: "Poppins", "sans-serif";
     font-size: 16px;
     color: white;
@@ -37,7 +36,7 @@ padding-bottom: 100px;
     border: none;
   }
   .wday-4 {
-    background-color: #6886c5;
+    background-color: rgba(104, 134, 197, 0.7);
     font-family: "Poppins", "sans-serif";
     font-size: 16px;
     color: white;
@@ -51,7 +50,7 @@ padding-bottom: 100px;
     border: none;
   }
   .wday-6 {
-    background-color: #6886c5;
+    background-color: rgba(104, 134, 197, 0.7);
     font-family: "Poppins", "sans-serif";
     font-size: 16px;
     color: white;
@@ -76,3 +75,4 @@ padding-bottom: 100px;
     text-decoration: none;
     }
 }
+
