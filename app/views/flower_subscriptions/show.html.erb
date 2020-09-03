@@ -12,8 +12,8 @@
       <ul class="list-unstyled">
         <li><strong>ISSUED ON</strong> <%= @flower_subscription.created_at.to_date %></li>
         <li><strong>SUBSCRIPTION</strong> <%= @flower_subscription.size %> [<%= @flower_subscription.flower_subscription_sku %>]</li>
-        <li><strong>TOTAL PER DELIVERY</strong> <%= humanized_money_with_symbol @flower_subscription.amount %></li>
-        <li><strong>DELIVERY DAY</strong> @flower_subscription.delivery_day %> at <%= @flower_subscription.time_of_day %></li>
+        <li><strong>TOTAL PER DELIVERY</strong> <%= humanized_money_with_symbol @flower_subscription.price_cents %></li>
+        <li><strong>DELIVERY DAY</strong> <%= @flower_subscription.delivery_day %> at <%= @flower_subscription.time_of_day %></li>
       </ul>
     </div>
   </div>
