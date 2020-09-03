@@ -4,16 +4,18 @@ Rails.application.routes.draw do
   resources :users
   resources :flower_subscriptions
   resources :accounts, only: [:index, :show, :update, :edit]
-  resources :payments, only: [:index]
+  resources :payments, only: [:index, :new]
+  resources :orders, only: [:show, :create]
   namespace :manager do
     resources :dashboard
   end
+
 
   get "/about", to: "pages#about"
   get "/flowers", to: "pages#flowers"
   get "/contact", to: "pages#contact"
   get "/feedback", to: "pages#new_feedback"
   post "/feedback/:id", to: "pages#create_feedback"
-
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
