@@ -4,4 +4,8 @@ class FlowerSubscription < ApplicationRecord
   monetize :price_cents
   validates :size, :frequency, :price, presence: true
 
+  def start_time
+    self.delivery_date
+  end
+
 end

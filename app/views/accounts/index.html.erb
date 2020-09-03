@@ -1,5 +1,5 @@
 <% if current_user.role == 'manager' %>
-    <%= render 'manager_view' %>
+    <%= render 'accounts/manager_view' %>
     <% else %>
-    <%= render 'user_view' %>
+    <%= render 'accounts/user_view' %>
 <% end %>
