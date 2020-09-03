@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   resources :users
   resources :flower_subscriptions
   resources :accounts, only: [:index, :show, :update, :edit]
-  resources :payments, only: [:index, :new]
+  resources :payments, only: [:index]
   resources :orders, only: [:show, :create]
   namespace :manager do
     resources :dashboard
   end
 
-
+  get "/payments/new/:id", to: "payments#new", as: :new_payment
   get "/about", to: "pages#about"
   get "/flowers", to: "pages#flowers"
   get "/contact", to: "pages#contact"

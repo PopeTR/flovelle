@@ -2,7 +2,7 @@ class FlowerSubscription < ApplicationRecord
   belongs_to :user
   has_many :orders, dependent: :destroy
   monetize :price_cents
-  validates :size, :frequency, :price, presence: true
+  validates :size, :frequency, :price_cents, presence: true
 
   def start_time
     self.delivery_date
