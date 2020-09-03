@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 account-column">
+      <h3> <strong> Personal Information </strong> </h3>
+      <div class="border-bottom">
+        <p> <strong> Name </strong> </p>
+        <p id="black-p"><i class="fas fa-user"></i> <%=current_user.first_name%></p>
+      </div>
+      <div class="border-bottom">
+        <p> <strong> E-Mail </strong> </p>
+        <p id="black-p"><i class="fas fa-envelope"></i> <%=current_user.email%></p>
+      </div>
+      <div class="border-bottom">
+        <p> <strong> Phone Number </strong> </p>
+        <p id="black-p"><i class="fas fa-phone-alt"></i> +48 76 4278 3829</p>
+      </div>
+      <div class="border-bottom">
+        <p> <strong> Adress </strong> </p>
+        <p id="black-p"><i class="fas fa-map-marker-alt"></i> <%=current_user.address%>, <%=current_user.zipcode%></p>
+      </div>
+      <div class="card-product">
+        <img src="https://images.unsplash.com/photo-1577090727079-a854293d7cd6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" />
+        <div class="card-product-infos">
+          <p><strong> Your subscription</strong></p>
+          <p id="black-p"> A <%=current_user.flower_subscriptions.first.size%> </p>
+          <% if current_user.flower_subscriptions.first.frequency == 1 %>
+          <%= Once a month %>
+          <% elsif current_user.flower_subscriptions.first.frequency == 2 %>
+          <%= Twice a week %>
+          <% else %>
+          <%= Once a week %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="simple-calendar">
+        <%= month_calendar do |date| %>
+        <%= date.day %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
