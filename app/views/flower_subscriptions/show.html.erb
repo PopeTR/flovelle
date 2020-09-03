@@ -1,14 +1,20 @@
-<div class="col-12 col-md-6 col-lg-4">
-      <% @fsubscriptions.each do |fsubscription| %>
-          <div class="card-trip">
-            <div class="card-trip-infos">
-              <div>
-                <h2><%=fsubscription.id%></h2>
-                <p>Size of Bouquet: <%=fsubscription.size%></p>
-                <p>Number of deliveries per month: <%=fsubscription.frequency%></p>
-                <p>€<%=fsubscription.price%></p>
-              </div>
-            </div>
-          </div>
-      <% end %>
+<div class="container">
+  <div class="row py-4">
+    <div class="col-md-3"><% if @flower_subscription.size == 'small' %>
+        <%= image_tag "small-sub.jpg", width: '100%' %>
+      <% elsif @flower_subscription.size == 'medium' %>
+        <%= image_tag "medium-sub.jpg", width: '100%' %>
+      <% elsif @flower_subscription.size == 'large' %>
+        <%= image_tag "large-sub.jpg", width: '100%' %>
+      <% end %></div>
+    <div class="col">
+      <h1>Order #<%= @flower_subscription.id %> <small><span class="badge badge-primary"><%= @flower_subscription.state %></span></small></h1>
+      <ul class="list-unstyled">
+        <li><strong>ISSUED ON</strong> <%= @flower_subscription.created_at.to_date %></li>
+        <li><strong>SUBSCRIPTION</strong> <%= @flower_subscription.size %> [<%= @flower_subscription.flower_subscription_sku %>]</li>
+        <li><strong>TOTAL PER DELIVERY</strong> <%= humanized_money_with_symbol @flower_subscription.amount %></li>
+        <li><strong>DELIVERY DAY</strong> @flower_subscription.delivery_day %> at <%= @flower_subscription.time_of_day %></li>
+      </ul>
     </div>
+  </div>
+</div>

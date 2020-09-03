@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col-md-3">
+      <% if @flower_subscription.size == 'small' %>
+        <%= image_tag "small-sub.jpg", width: '100%' %>
+      <% elsif @flower_subscription.size == 'medium' %>
+        <%= image_tag "medium-sub.jpg", width: '100%' %>
+      <% elsif @flower_subscription.size == 'large' %>
+        <%= image_tag "large-sub.jpg", width: '100%' %>
+      <% end %>
+    </div>
+
+    <div class="col">
+      <h1>Checkout summary</h1>
+      <h2>Order Delivered:
+        <% if @flower_subscription.frequency == 1 %>
+          Monthly
+        <% elsif @flower_subscription.frequency == 2 %>
+          Fortnightly
+        <% elsif @flower_subscription.frequency == 4 %>
+          Weekly
+        <% end %></h2>
+      <p>Purchase of a <strong><%= @flower_subscription.size %> subscription</strong> for <strong><%= humanized_money_with_symbol(@flower_subscription.amount) %></strong></p>
+      <button id="pay" class="btn btn-primary">Pay</button>
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @flower_subscription.checkout_session_id %>'
+          });
+        });
+      </script>
+    </div>
+  </div>
+</div>

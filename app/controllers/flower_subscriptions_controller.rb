@@ -6,6 +6,7 @@ class FlowerSubscriptionsController < ApplicationController
   end
 
   def show
+    @flower_subscription = current_user.flower_subscriptions.find(params[:id])
   end
 
   def edit

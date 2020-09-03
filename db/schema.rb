@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_02_095001) do
+ActiveRecord::Schema.define(version: 2020_09_03_134643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2020_09_02_095001) do
   create_table "flower_subscriptions", force: :cascade do |t|
     t.string "size"
     t.integer "frequency"
-    t.integer "price"
     t.string "preferences"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -26,6 +25,11 @@ ActiveRecord::Schema.define(version: 2020_09_02_095001) do
     t.datetime "delivery_date"
     t.string "delivery_day"
     t.string "time_of_day"
+    t.integer "price_cents", default: 0, null: false
+    t.string "state"
+    t.string "flower_subscription_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
     t.index ["user_id"], name: "index_flower_subscriptions_on_user_id"
   end
 
@@ -34,6 +38,10 @@ ActiveRecord::Schema.define(version: 2020_09_02_095001) do
     t.bigint "flower_subscription_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "state"
+    t.string "flower_subscription_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
     t.index ["flower_subscription_id"], name: "index_orders_on_flower_subscription_id"
     t.index ["supplier_id"], name: "index_orders_on_supplier_id"
   end
