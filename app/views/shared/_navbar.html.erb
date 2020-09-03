@@ -20,13 +20,21 @@
           <%= link_to "Subscriptions", flower_subscriptions_path %>
         </li>
         <li class="nav-item">
-          <%= link_to "Our Farmers", flowers_path %>
+          <%= link_to "Our Flowers", flowers_path %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign up", new_user_registration_path %>
+          <%if current_user.present? %>
+            <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+          <% else %>
+            <%= link_to "Sign Up", new_user_registration_path %>
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign In", new_user_session_path %>
+          <% if current_user.present? %>
+            <%= link_to "Account (#{current_user.email})", accounts_path %>
+          <% else %>
+            <%= link_to "Log In", new_user_session_path %>
+          <% end %>
         </li>
       </ul>
     </div>
