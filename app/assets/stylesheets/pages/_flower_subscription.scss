@@ -32,14 +32,14 @@
 #sticky-bar {
   position: sticky;
   top: 139px;
-  z-index: 99999;
+  z-index: 1;
 }
 
 .content-status ul {
 	display: flex;
-	// justify-content: center;
+	justify-content: center;
 	align-items: center;
-	margin: 0 36rem;
+	// margin: 0 36rem;
 	li {
 		list-style: none;
 		max-width: 70px;
