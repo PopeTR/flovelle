@@ -16,16 +16,16 @@ supplier2 = Supplier.create(name: 'Chelsea', address: 'Chelsea lane, London', zi
 supplier3 = Supplier.create(name: 'Flowery Florist', address: 'Flower lane, Zandvoort', zipcode: '2024JD', email: 'zandvoort@flowers.com', user_id: manager1.id)
 
 
-subscription1 = FlowerSubscription.create(size: 'small', frequency: 1, price_cents: 25, user_id: user1.id)
-subscription2 = FlowerSubscription.create(size: 'small', frequency: 2, price_cents: 25, user_id: user2.id)
-subscription3 = FlowerSubscription.create(size: 'small', frequency: 4, price_cents: 25, user_id: user3.id)
-subscription4 = FlowerSubscription.create(size: 'medium', frequency: 1, price_cents: 40, user_id: user4.id, delivery_date: '2020-09-03 12:32:52')
-subscription5 = FlowerSubscription.create(size: 'medium', frequency: 2, price_cents: 40, user_id: user5.id)
-subscription6 = FlowerSubscription.create(size: 'medium', frequency: 4, price_cents: 40, user_id: user1.id)
-subscription7 = FlowerSubscription.create(size: 'medium', frequency: 1, price_cents: 40, user_id: user2.id)
-subscription8 = FlowerSubscription.create(size: 'large', frequency: 1, price_cents: 55, user_id: user3.id)
-subscription9 = FlowerSubscription.create(size: 'large', frequency: 2, price_cents: 55, user_id: user4.id)
-subscription10 = FlowerSubscription.create(size: 'large', frequency: 4, price_cents: 55, user_id: user5.id)
+subscription1 = FlowerSubscription.create(size: 'small', frequency: 1, price_cents: 25, user_id: user1.id, delivery_day: "Monday")
+subscription2 = FlowerSubscription.create(size: 'small', frequency: 2, price_cents: 25, user_id: user2.id, delivery_day: "Monday")
+subscription3 = FlowerSubscription.create(size: 'small', frequency: 4, price_cents: 25, user_id: user3.id, delivery_day: "Monday")
+subscription4 = FlowerSubscription.create(size: 'medium', frequency: 1, price_cents: 40, user_id: user4.id, delivery_day: "Tuesday", delivery_date: '2020-09-03 12:32:52')
+subscription5 = FlowerSubscription.create(size: 'medium', frequency: 2, price_cents: 40, user_id: user5.id, delivery_day: "Tuesday")
+subscription6 = FlowerSubscription.create(size: 'medium', frequency: 4, price_cents: 40, user_id: user1.id, delivery_day: "Tuesday")
+subscription7 = FlowerSubscription.create(size: 'medium', frequency: 1, price_cents: 40, user_id: user2.id, delivery_day: "Wednesday")
+subscription8 = FlowerSubscription.create(size: 'large', frequency: 1, price_cents: 55, user_id: user3.id, delivery_day: "Wednesday")
+subscription9 = FlowerSubscription.create(size: 'large', frequency: 2, price_cents: 55, user_id: user4.id, delivery_day: "Wednesday")
+subscription10 = FlowerSubscription.create(size: 'large', frequency: 4, price_cents: 55, user_id: user5.id, delivery_day: "Thursday")
 
 
 # order1 = Order.create(supplier_id: supplier1.id, flower_subscription_id: subscription1.id)
