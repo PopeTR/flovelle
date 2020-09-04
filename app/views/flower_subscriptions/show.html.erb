@@ -1,21 +1,26 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col-md-3"><% if @flower_subscription.size == 'Small' %>
-        <%= image_tag "small-sub.jpg", width: '100%' %>
-      <% elsif @flower_subscription.size == 'Medium' %>
-        <%= image_tag "medium-sub.jpg", width: '100%' %>
-      <% elsif @flower_subscription.size == 'Large' %>
-        <%= image_tag "large-sub.jpg", width: '100%' %>
-      <% end %></div>
+
+<div class="confirmation-container row">
+<div class="picture-container col-lg-6">
+  <div class="background-howitworks" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1495030071804-96e2e8b6e25f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80);">
+  </div>
+</div>
+<div class="confirmation col-lg-6">
+  <div class="row py-4 description">
     <div class="col">
-      <h1>Order #<%= @flower_subscription.id %> <small><span class="badge badge-primary"><%= @flower_subscription.state %></span></small></h1>
+      <h1>Your Subscription #<%= @flower_subscription.id %> <small><span class="badge badge-primary"><%= @flower_subscription.state %></span></small></h1>
       <ul class="list-unstyled">
         <li><strong>ISSUED ON</strong> <%= @flower_subscription.created_at.to_date %></li>
-        <li><strong>SUBSCRIPTION</strong> <%= @flower_subscription.size %> [<%= @flower_subscription.flower_subscription_sku %>]</li>
+        <li><strong>SUBSCRIPTION</strong> <%= @flower_subscription.size %></li>
         <li><strong>TOTAL PER DELIVERY</strong> <%= humanized_money_with_symbol @flower_subscription.price_cents %></li>
         <li><strong>DELIVERY DAY</strong> <%= @flower_subscription.delivery_day %> at <%= @flower_subscription.time_of_day %></li>
       </ul>
+      <div class="text-confirmation">
+        <p id="line1">Thank you for your selection of locally farmed flowers with us!  You will receive your Flovelle bouqet shorlty. </p>
+        <p id="line2">We’ll send the purchase overview to your registered email.  </p>
+        <p id="line3">If there are any changes you want to make to your subscription/ order, just change your preferences through your personal account and via our subscriptions panel</p>
+      </div>
+
     </div>
   </div>
 </div>
-
+</div>
