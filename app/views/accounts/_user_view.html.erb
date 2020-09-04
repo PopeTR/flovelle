@@ -1,5 +1,6 @@
-<div class="container d-flex flex-row justify-content-between align-items-center">
-  <div class="row">
+<div class="container">
+  <div class="row" style="margin-top: 200px">
+
     <div class="col-6 account-column">
       <h3> <strong> Personal Information </strong> </h3>
       <div class="border-bottom">
@@ -23,15 +24,22 @@
           <img src="https://images.unsplash.com/photo-1577090727079-a854293d7cd6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" />
           <div class="card-product-infos">
             <p><strong> Your subscription</strong></p>
-            <p id="black-p"> A <%=current_user.flower_subscriptions.first.size%> boquet
-             <% if current_user.flower_subscriptions.first.frequency == 1 %>
+            <p id="black-p"> A <%=@order.size%> boquet
+             <% if @order.frequency == 1 %>
              once a month
-             <% elsif current_user.flower_subscriptions.first.frequency == 2 %>
+             <% elsif @order.frequency == 2 %>
              twice a week
              <% else %>
              XX a week
              <% end %>
            </p>
+         </div>
+         <div>
+           <% if @order.state = "recieved"%>
+           <%= image_tag "Flower_status/Status_1.png", size: "200x200" %>
+           <% elsif @order.state = "delivered" %>
+           <%= image_tag "Flower_status/Status_5.png", size: "200x200" %>
+           <% end %>
          </div>
        </div>
      </div>
