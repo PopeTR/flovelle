@@ -1,0 +1,84 @@
+<div class="container-home">
+  <section class="child-home page1">
+    <div id="hero">
+      <div class="background-farmer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1492104387331-206462f14a88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+            </div>
+      </div>
+
+      <div class="header-home">
+        <%= image_tag "whitelogo.png", width: 150, class: "header-img"%>
+        <h1 id="cat">Meet the farmers that produce your flowers</h1>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <section class="child-home page3">
+      <div class="big-container">
+        <div class="background-farmer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.floretflowers.com/wp-content/uploads/2013/10/IMG_9122.jpg);">
+        </div>
+
+        <div class="home-farmer col-lg-6 col-sm-9 offset-md-5">
+          <div class="container-booking">
+            <h3 class="farmer-text">The dutch flower farmers suffered big losses during the Corona virus pandemic. With florists shutting down and people unwilling to go out and buy flowers, farmers needed a new way to sell their produce. Flovelle is committed to support our local farmers and bring you their fresh flowers. </h3>
+            <div id="container-button">
+              <a href="/flowers">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="child-home page4">
+      <div class="big-container">
+        <div class="background-about" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.floretflowers.com/wp-content/uploads/2014/06/photo-3.jpg);">
+        </div>
+
+        <div class="home-about">
+          <div class="container-booking col-lg-6 col-sm-9 offset-md-1">
+            <h3 class="farmer-text" style="color:white;">Some of our farmers have been cultivating flowers for generations. To ensure that this will be possible in another 100 years, they are committed to sustainable agriculture. This also means that your flowers will be extra fresh and pesticide free. </h3>
+            <div id="container-button">
+              <a href="/about">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="child-home page3">
+      <div class="big-container">
+        <div class="background-farmer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1569880153113-76e33fc52d5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
+        </div>
+
+        <div class="home-farmer col-lg-6 col-sm-9 offset-md-6">
+          <div class="container-booking">
+            <h3 class="farmer-text">To make sure you receive fresh flowers all year round, we work with a variety of farmers. Some of them specialise on cold-resistant flowers that can be grown all year round while other produce the vibrant spring and summer flowers we all know and love.</h3>
+            <div id="container-button">
+              <a href="/flowers">
+                <button class="learn-more" onclick="window.location.href='http://localhost:3000/flower_subscriptions';">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                  </span>
+                  <span class="button-text">Our Flowers</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="child-home page5">
+
+      <div class="wrapper-container">
+        <%= image_tag "purplelogo.png", class: "logo-footer" %>
+      </div>
+      <%= render 'shared/footer' %>
+    </section>
+
+  </div>
+
