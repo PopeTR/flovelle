@@ -10,7 +10,19 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      ...
+      <div class="header-confirmation">
+        <h1>DONE</h1>
+        <h2>Confirmation on your Flovelle Purchase</h2>
+      </div>
+      <div class="text-confirmation">
+        <p id="line1">Thank you for your selection of locally farmed flowers with us!  You will receive your Flovelle bouqet shorlty. </p>
+        <p id="line2">We’ll send the purchase overview to your registered email.  </p>
+        <p id="line3">If there are any changes you want to make to your subscription/ order, just change your preferences through your personal account and via our subscriptions panel</p>
+      </div>
+
+      <%= link_to "Back", :back %>
+
     </div>
   </div>
 </div>
+        <%= render 'shared/confirmation' %>

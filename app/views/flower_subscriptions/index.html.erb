@@ -5,7 +5,7 @@
 
         <div class="status-bar" id="sticky-bar">
           <div class="content-status">
-            <ul> 
+            <ul>
               <!-- these are for the timeline steps -->
               <li id="" class="full-black-border"> 01 </li>
               <li id="status-options"> 02 </li> <!-- add full-border-black minus left -->
@@ -38,9 +38,25 @@
                       <input type="hidden" name="authenticity_token" value="am1OVWFikNBqB9tHD46TQGNeI1VymaafKVSF6qD3LxPZCTq/SFxraUeLDdeQ2OvUmCQKWcVS97XylwH3BwgzGg==">
 
                       <div class="row-flowers">
+
                         <div class="flower-container col-12 flower-subscription-images">
                           <% image_collection = ["Basic Flower.jpg","Blossom Field.jpg", "Exotic Bouquet.jpg",
                             "Mixed Bouquet.jpg", "Rose Field.jpg", "Yellow Flowers.jpg" ] %>
+                          <fieldset class="form-group radio_buttons required flower-subscription-images">
+
+                            <input type="hidden" name="flower_subscription[images]" value="">
+                            <% image_collection.each_with_index do |image, index| %>
+                              <div class="form-check flower-choice">
+                                <input class="form-check-input radio_buttons required" type="radio" value="image_tag" name="flower_subscription[images]" id="flower_subscription_image-#{index}">
+                                <label class="form-check-label collection_radio_buttons" for="flower_subscription_image-#{index}">
+                                <%= image_tag(image) %>
+                                </label>
+                              </div>
+                            <% end %>
+                          </fieldset>
+                        </div>
+                      </div>
+
 
                             <fieldset class="form-group radio_buttons required flower-subscription-images">
 

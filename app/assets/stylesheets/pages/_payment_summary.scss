@@ -1,0 +1,15 @@
+.payments-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 200px auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: rgba(255,255,255,0.9);
+}
+
+.payments-container h1 {
+  font-weight: 900;
+  margin-bottom: 20px;
+}

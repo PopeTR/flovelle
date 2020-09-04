@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row py-4">
-    <div class="col-md-3"><% if @flower_subscription.size == 'small' %>
+    <div class="col-md-3"><% if @flower_subscription.size == 'Small' %>
         <%= image_tag "small-sub.jpg", width: '100%' %>
-      <% elsif @flower_subscription.size == 'medium' %>
+      <% elsif @flower_subscription.size == 'Medium' %>
         <%= image_tag "medium-sub.jpg", width: '100%' %>
-      <% elsif @flower_subscription.size == 'large' %>
+      <% elsif @flower_subscription.size == 'Large' %>
         <%= image_tag "large-sub.jpg", width: '100%' %>
       <% end %></div>
     <div class="col">
@@ -18,3 +18,4 @@
     </div>
   </div>
 </div>
+
