@@ -3,12 +3,12 @@
 
   display: inline-block;
   text-decoration: none;
-  background-color: #ffe0ac;
-  color: black!important;
+  background-color: #ffacb7;
+  color: white!important;
   border: solid 1px white;
   cursor: pointer;
   font-family: Poppins,sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 50px;
   text-align: center;
   padding: 0px 33px;
@@ -21,8 +21,8 @@
   // -webkit-font-smoothing: antialiased;
   // -moz-osx-font-smoothing: grayscale;
   height: 50px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 8px;
+  margin-top: 8px;
   transition: all 0.3s;
   position: relative;
 }
@@ -30,11 +30,37 @@
 
 // }
 
-#confirmation-button:hover {
+.confirmation-button:hover {
   opacity: 0.5;
   transform: scale(0.1, 1);
-    z-index: 1;
+  z-index: 1;
   transition: all 0.3s;
-  background-color: rgba(255,255,255,0.1);
+  background-color: #6886c5;
 }
 
+.modal-content {
+  margin: 0 auto;
+  display: flex;
+  color: black;
+  justify-content: flex;
+}
+
+div.header-confirmation {
+
+}
+h1.header-confirmation  {
+
+}
+
+h2.modal-content {
+
+}
+// "modal-content">
+//       <div class="header-confirmation">
+//         <h1>DONE</h1>
+//         <h2>Confirmation on your Flovelle Purchase</h2>
+//       </div>
+//       <div class="text-confirmation">
+//         <p id="line1">Thank you for your selection of locally farmed flowers with us!  You will receive your Flovelle bouqet shorlty. </p>
+//         <p id="line2">We’ll send the purchase overview to your registered email.  </p>
+//         <p id="line3"

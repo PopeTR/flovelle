@@ -2,7 +2,7 @@
   display: flex;
   align-items: baseline;
   justify-content: center;
-  height:800px;
+  height:900px;
   width: 100%;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -20,7 +20,7 @@
     color: white!important;
     border-color: white;
     font-size: 1rem;
-    margin-top:40px;
+    margin-top:190px;
     position: relative;
   }
 
@@ -134,6 +134,12 @@ input.form-control {
 .remember_me {
   color: white!important;
 }
+
+// .form-check-input:checked ~ label {
+//     background-color: none;
+//     border: none;
+//     }
+
 .form-check-input.is-valid ~ .form-check-label {
   color: white!important;
 }
