@@ -28,7 +28,7 @@ class FlowerSubscriptionsController < ApplicationController
 
     if @flower_subscription.frequency == "Monthly"
       @flower_subscription.frequency = 1
-    elsif @flower_subscription.frequency == "Biweekly"
+    elsif @flower_subscription.frequency == "Twice a Month"
       @flower_subscription.frequency == 2
     else @flower_subscription.frequency == "Weekly"
       @flower_subscription.frequency == 4
