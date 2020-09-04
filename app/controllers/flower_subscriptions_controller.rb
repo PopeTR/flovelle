@@ -1,5 +1,5 @@
 class FlowerSubscriptionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :create]
+  skip_before_action :authenticate_user!, only: [ :index, :create]
   skip_before_action :verify_authenticity_token
 
   def index
@@ -25,6 +25,23 @@ class FlowerSubscriptionsController < ApplicationController
     else @flower_subscription.size == "Large"
       @flower_subscription.price_cents == 5500
     end
+
+    if @flower_subscription.frequency == "Monthly"
+      @flower_subscription.frequency = 1
+    elsif @flower_subscription.frequency == "Biweekly"
+      @flower_subscription.frequency == 2
+    else @flower_subscription.frequency == "Weekly"
+      @flower_subscription.frequency == 4
+    end
+
+    if @flower_subscription.time_of_day == "Morning"
+      @flower_subscription.time_of_day = "Between 8am-12pm"
+    elsif @flower_subscription.time_of_day == "Afternoon"
+      @flower_subscription.time_of_day == "Between 13pm-15pm"
+    else @flower_subscription.time_of_day == "Evening"
+      @flower_subscription.time_of_day == "Between 15pm-18pm"
+    end
+
     @flower_subscription.save!
 
     session = Stripe::Checkout::Session.create(

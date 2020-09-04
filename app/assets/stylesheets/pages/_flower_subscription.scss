@@ -1,12 +1,14 @@
-.columns {
-	width: 100%;
-	padding-left: 20px;
-	padding-right: 20px;
-}
+// .columns {
+// 	width: 100%;
+// 	padding-left: 20px;
+// 	padding-right: 20px;
+// }
+
 
 .content-status {
 	width: 100%;
-	padding: 20px 0;
+	padding-top: 20px;
+	// padding-bottom: 20px;
 	background-color: $my-grey;
 }
 
@@ -15,11 +17,20 @@
 	justify-content: center;
 	align-items: center;
 	padding-top: 10px;
+	margin-left: -10px;
+	border-bottom: solid 1px black;
 }
+
+.main-title {
+	text-align: center;
+	padding-top: 150px;
+	font-size: 40px;
+}
+
 
 #sticky-bar {
   position: sticky;
-  top: 159px;
+  top: 139px;
   z-index: 99999;
 }
 
@@ -27,7 +38,7 @@
 	display: flex;
 	// justify-content: center;
 	align-items: center;
-	margin: 0 34rem;
+	margin: 0 36rem;
 	li {
 		list-style: none;
 		max-width: 70px;
@@ -65,9 +76,6 @@
     }
 }
 
-.start-subscription {
-	text-align: center;
-}
 
 .product-card {
 	width: 1068px;
@@ -76,19 +84,11 @@
 	text-align: center;
 }
 
-.main-title {
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 40px;
-	border-top: solid 1px black;
-}
-
 .product-customize {
 	text-align: center;
 }
 
-.form-check {
+.flower-choice {
 	list-style: none;
 	text-align: center;
 	padding: 5px 15px;
@@ -97,21 +97,40 @@
 	justify-content: center;
 }
 
-.form-check-label {
-	// border: 1px solid black;
-	// padding: 5px;
-	// margin: 8px 10px;
+.flower-subscription-images {
 	img {
-		height: 260px;
-		width: 220px;
+	height: 260px;
+	width: 280px;
+	padding: 10px;
+	border-radius: 30px;
+	box-shadow: 1px 1px 5px black;
 	}
 }
 
-.form-check-input:checked ~ label {
+
+.flower-form-checks:checked ~ label {
 	background-color: black;
 	color: white;
+	img {
+		background-color: black;
+		color: white;
+		border-radius: 30px;	
+	}
 }
-.form-check-input.radio_buttons {
+
+.flower-form-image-checks.radio_buttons {
+	display: none;
+}
+
+.flower-form-image-checks:checked ~ label {
+	background-color: black;
+	color: white;
+	border-radius: 30px;
+}
+
+
+
+.flower-form-checks.radio_buttons {
 	display: none;
 }
 
@@ -121,8 +140,6 @@
 
 .product-customize-flowers {
 	.row-flowers {
-		display: flex;
-		flex-wrap: wrap;
 		margin-right: -15px;
 		margin-left: -15px;
 		padding-top: 20px;
@@ -131,19 +148,18 @@
 	}
 }
 
-.flower-choice {
-	position: relative;
-	img {
-		height: 260px;
-		width: 240px;
-		padding: 10px;
-		object-fit: cover;
+.row-flowers {
+	.image-grid-holder {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
-.flower-subscription-images { 
-display: grid;
- }
+.image-grid-holder {
+	.form-check-label {
+		margin-bottom: 8px !important;
+	}
+}
 
 .flower {
 	.flower-text {
@@ -161,14 +177,22 @@ display: grid;
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
-	padding-top: 20px;
+	padding-top: 40px;
 	border-top: 1px solid #000;
-	.form-check {
+	.form-size {
 		list-style: none;
 		text-align: center;
 		border: solid 1px black;
 		width: 260px;
+		// padding: 5px 15px;
+		padding: 0;
 	}
+}
+
+.form-size label {
+	width: 100%;
+	height: 100%;
+	padding: 5px 15px;
 }
 
 .product-customize-frequency {
@@ -176,79 +200,78 @@ display: grid;
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
-	padding-top: 20px;
+	padding-top: 40px;
 	border-top: 1px solid #000;
-	ul {
+	.form-frequency {
 		list-style: none;
 		text-align: center;
-		padding: 5px 5px;
 		border: solid 1px black;
 		display: inline-block;
 		width: 260px;
+		// padding: 5px 15px;
+		padding: 0;	
 	}
+}
+
+.form-frequency label {
+	width: 100%;
+	height: 100%;
+	padding: 5px 15px;
 }
 
 .product-customize-dates {
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
 	margin: 0 auto;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 40px;
 	border-top: 1px solid #000;
-	ul {
+	.form-days {
 		list-style: none;
 		text-align: center;
-		padding: 5px 5px;
 		border: solid 1px black;
 		display: inline-block;
 		width: 260px;
+		// padding: 5px 15px;
+		padding: 0;
 	}
 }
 
-.form-check {
-	padding: 0;
-}
-
-.form-check label {
+.form-days label {
 	width: 100%;
-height: 100%;
-padding: 5px 15px;
+	height: 100%;
+	padding: 5px 15px;
 }
 
-.product-customize-dates-timeslot {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.product-customize-dates-days {
 	margin: 0 auto;
 	padding-bottom: 20px;
-	ul {
+	.form-dates {
 		list-style: none;
 		text-align: center;
-		padding: 5px 5px;
 		border: solid 1px black;
 		display: inline-block;
 		width: 260px;
+		// padding: 5px 15px;
+		padding: 0;
 	}
 }
 
-.product-summary {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 auto;
+.form-dates label {
+	width: 100%;
+	height: 100%;
+	padding: 5px 15px;
+}
+
+.flower_subscription_time_of_day {
 	padding-top: 20px;
-	padding-bottom: 20px;
-	border-top: 1px solid #000;
-	.product-summary-title {
-		text-align: center;
-		position: inherit;
-	}
+}
+
+.order-ending {
+	border-top: solid 1px black;
+	padding-top: 20px;
 }
 
 .order-button {
 	background-color: $my-blue;
-	padding-top: 12px;
+	// padding-top: 12px;
 	width: 260px;
 	&:hover {
 		background-color: $my-orange;

@@ -1,6 +1,6 @@
 <div class="container-forms">
 
-  <div class="col-lg-6 col-sm-9">
+  <div class="col-lg-4 col-sm-9">
     <div class="container-signup">
 
       <h2>Sign up</h2>
@@ -9,6 +9,14 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <%= f.input :first_name,
+        required: true,
+        autofocus: true,
+        input_html: { autocomplete: "first-name" }%>
+        <%= f.input :last_name,
+        required: true,
+        autofocus: true,
+        input_html: { autocomplete: "last-name" }%>
         <%= f.input :email,
         required: true,
         autofocus: true,

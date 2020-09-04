@@ -1,0 +1,37 @@
+.confirmation-container {
+  height: 100vh;
+  padding: none;
+}
+
+.confirmation {
+  margin: 200px auto;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: calc(100vh - 200px);
+}
+
+
+.picture-container {
+  height: calc(100vh - 200px);
+  margin: none;
+}
+
+
+.picture-container.col-lg-6 {
+  padding: 0px;
+}
+
+
+.confirmation-container .row {
+  margin: 0px;
+}
+
+.row .py-4 .description {
+  margin: 40px 20px 0px 20px;
+}
+
+.col h1 {
+  font-weight: 900;
+  margin: 40px 0px;
+
+}
