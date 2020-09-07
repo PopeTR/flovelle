@@ -1,7 +1,61 @@
+
+
 <div class="container">
   <div class="row" style="margin-top: 200px">
+
+
+    <% if @order %>
+    <div class="subscription-card-container col-9">
+      <h3> <strong> My Subscription </strong> </h3>
+      <div class="card-product ">
+        <img src="https://images.unsplash.com/photo-1577090727079-a854293d7cd6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" />
+        <div class="card-product-infos">
+          <p><strong> Your subscription</strong></p>
+          <p id="black-p"> A <%=@order.size%> bouquet
+            <% if @order.frequency == 1 %>
+              once a month
+            <% elsif @order.frequency == 2 %>
+              twice a month
+            <% else %>
+              once a week
+            <% end %>
+            <p>Next Delivery on: <%= @delivery.strftime("%a") %>, <%= @delivery.strftime("%d") %> <%= @delivery.strftime("%b") %></p>
+            </p>
+        </div>
+      </div>
+      <% else %>
+      <% end %>
+    </div>
+
+    <div class="subscription-status-container col-3">
+      <h3> <strong> Status </strong> </h3>
+      <div class="status-petal ">
+       <% if @order.state = "recieved"%>
+       <%= image_tag "Flower_status/Status_1.png"%>
+       <% elsif @order.state = "delivered" %>
+       <%= image_tag "Flower_status/Status_5.png"%>
+       <% end %>
+      </div>
+    </div>
+
+     <div class="simple-container col-6">
+      <div class="simple-calendar">
+
+        <%= month_calendar(attribute: :delivery_date, events: @bookings)  do |date, bookings| %>
+
+        <%= date.day %>
+        <% if date.day == @delivery.day %>
+        <div>
+          <%= image_tag "blume.png", width: 30, class: "delivery-icon"%>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+
     <div class="col-6 account-column">
       <h3> <strong> Personal Information </strong> </h3>
+      <div class="account-description">
       <div class="border-bottom">
         <p> <strong> Name </strong> </p>
         <p id="black-p"><i class="fas fa-user"></i> <%=current_user.first_name%></p>
@@ -15,49 +69,10 @@
         <p id="black-p"><i class="fas fa-phone-alt"></i> +48 76 4278 3829</p>
       </div>
       <div class="border-bottom">
-        <p> <strong> Adress </strong> </p>
+        <p> <strong> Address </strong> </p>
         <p> <%= @start_time %>
           <p id="black-p"><i class="fas fa-map-marker-alt"></i> <%=current_user.address%>, <%=current_user.zipcode%></p>
         </div>
-        <% if @order %>
-        <div class="card-product">
-          <img src="https://images.unsplash.com/photo-1577090727079-a854293d7cd6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" />
-          <div class="card-product-infos">
-            <p><strong> Your subscription</strong></p>
-            <p id="black-p"> A <%=@order.size%> boquet
-             <% if @order.frequency == 1 %>
-             once a month
-             <% elsif @order.frequency == 2 %>
-             twice a month
-             <% else %>
-             once a week
-             <% end %>
-
-           </p>
-         </div>
-         <div>
-           <% if @order.state = "received"%>
-           <%= image_tag "Flower_status/Status_1.png", size: "200x200" %>
-           <% elsif @order.state = "delivered" %>
-           <%= image_tag "Flower_status/Status_5.png", size: "200x200" %>
-           <% end %>
-         </div>
-       </div>
-       <% else %>
-      <% end %>
-     </div>
-     <div class="col-6">
-      <div class="simple-calendar">
-
-        <%= month_calendar(attribute: :delivery_date, events: @bookings)  do |date, bookings| %>
-        <%= date.day %>
-
-        <% bookings.each do |booking| %>
-        <div>
-          <%= image_tag "blume.png", width: 30, class: "delivery-icon"%>
-        </div>
-        <% end %>
-        <% end %>
       </div>
     </div>
   </div>
