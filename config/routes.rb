@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :flower_subscriptions
   resources :accounts, only: [:index, :show, :update, :edit]
   resources :payments, only: [:index]
-  resources :orders, only: [:show, :create]
   namespace :manager do
     resources :dashboard
   end

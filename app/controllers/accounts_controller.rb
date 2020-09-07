@@ -1,7 +1,9 @@
 class AccountsController < ApplicationController
   def index
     @bookings = current_user.flower_subscriptions
-    @order = current_user.flower_subscriptions.first
+    @suppliers = Supplier.all
+    @users = User.all
+    @flower_subscriptions = FlowerSubscription.all
   end
 
   def show
