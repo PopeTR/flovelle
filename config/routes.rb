@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "/contact", to: "pages#contact"
   get "/feedback", to: "pages#new_feedback"
   post "/feedback/:id", to: "pages#create_feedback"
+  # patch "/flower_subscriptions/:id", to: "flower_subscription#update", as: :update_subscription
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
