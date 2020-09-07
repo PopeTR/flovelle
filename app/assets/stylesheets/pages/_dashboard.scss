@@ -1,0 +1,25 @@
+
+
+.accounts-container {
+  margin-top: 160px;
+}
+
+.subscriptions-header h1, .farmers-header h1, .statistics-header h1 {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-weight: 900;
+  color: $my-blue;
+}
+
+.subscriptions-header {
+  margin-bottom: 40px;
+}
+
+.statistics-header {
+  margin-top: 40px;
+}
+
+#manager-data-container {
+  padding-top: 20px;
+}

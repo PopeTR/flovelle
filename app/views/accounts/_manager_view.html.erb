@@ -1,42 +1,72 @@
-<div class="container" id="manager-data-container">
-  <div class="row">
-    <div class="col-3 farmer-column">
-      <h1 class="manager-data">10</h1>
-      <p class="manager-info">New Orders this week</p>
-    </div>
-    <div class="col-3 farmer-column">
-      <h1 class="manager-data">15</h1>
-      <p class="manager-info">New Users this month</p>
-    </div>
-    <div class="col-3 farmer-column">
-      <h1 class="manager-data">42</h1>
-        <p class="manager-info">Running Subscriptions</p>
-    </div>
-    <div class="col-3 farmer-column">
-      <h1 class="manager-data">200</h1>
-        <p class="manager-info">Revenue this month</p>
-      <p></p>
+<div class="accounts-container">
+  <div class="statistics-header">
+    <h1>Statistics</h1>
+  </div>
+  <div class="container" id="manager-data-container">
+    <div class="row">
+      <div class="col-lg-3 col-sm-12 farmer-column">
+        <h1 class="manager-data">10</h1>
+        <p class="manager-info">New Orders this week</p>
+      </div>
+      <div class="col-lg-3 col-sm-12 farmer-column">
+        <h1 class="manager-data">15</h1>
+        <p class="manager-info">New Users this month</p>
+      </div>
+      <div class="col-lg-3 col-sm-12 farmer-column">
+        <h1 class="manager-data">42</h1>
+          <p class="manager-info">Running Subscriptions</p>
+      </div>
+      <div class="col-lg-3 col-sm-12 farmer-column">
+        <h1 class="manager-data">200</h1>
+          <p class="manager-info">Revenue this month</p>
+        <p></p>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-3 farmer-column">
-    </div>
-    <div class="col-3 farmer-column">
-     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="farmer-round" />
-     <p class="farmer-name">Farmer Bob</p>
-     <div>
-      <p class="farmer-orders"><strong>5</strong> orders this week</p>
+  <div class="farmers-header">
+    <h1>Farmers</h1>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <% @suppliers.each do |supplier| %>
+        <div class="col-3 farmer-column">
+          <img src= <%= supplier.photo %>, class="farmer-round" />
+          <p class="farmer-name"><%= supplier.name %></p>
+          <div>
+            <p class="farmer-orders"><strong><%= supplier.orders_for %></strong> orders this week</p>
+            <%= pluralize(supplier.orders_for, 'order') %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-  <div class="col-3 farmer-column">
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="farmer-round" />
-    <p class="farmer-name">Farmer Tom</p>
-    <div>
-      <p class="farmer-orders"><strong>3</strong> orders this week</p>
-    </div>
+
+  <div class="subscriptions-header">
+    <h1>Subscriptions</h1>
   </div>
-</div>
+  <div class="subscriptions">
+        <div id="table-wrapper">
+          <div id="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th><span class="text">ID</span></th>
+                        <th><span class="text">Price</span></th>
+                        <th><span class="text">Frequency</span></th>
+                        <th><span class="text">Issued</span></th>
+                        <th><span class="text">User</span></th>
+                        <th><span class="text">Edit/Delete</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <% @flower_subscriptions.each do |subscription| %>
+                  <tr> <td><%= subscription.id %></td> <td>€<%=  subscription.price_cents / 100%></td> <td><%=subscription.frequency%></td> <td><%=subscription.created_at.to_date %></td> <td><%= @users.find(subscription.user_id).first_name %> <%= @users.find(subscription.user_id).last_name %></td> <td>Edit / Delete</td></tr>
+                  <% end %>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 </div>
