@@ -4,6 +4,10 @@ class AccountsController < ApplicationController
     @order = current_user.flower_subscriptions.first
     @last_delivery = @order.delivery_date
     @delivery = delivery_check
+    @suppliers = Supplier.all
+    @users = User.all
+    @flower_subscriptions = FlowerSubscription.all
+
   end
 
   def show

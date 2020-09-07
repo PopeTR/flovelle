@@ -8,6 +8,13 @@
   <div class="row py-4 description">
     <div class="col">
       <h1>Your Subscription #<%= @flower_subscription.id %> <small><span class="badge badge-primary"><%= @flower_subscription.state %></span></small></h1>
+      <form method="patch" action="<%=params[:id]%>/edit" class="button_to">
+        <div>
+          <input class="order-button" value="Edit" type="submit" />
+        </div>
+      </form>
+      <br>
+
       <ul class="list-unstyled">
         <li><strong>ISSUED ON</strong> <%= @flower_subscription.created_at.to_date %></li>
         <li><strong>SUBSCRIPTION</strong> <%= @flower_subscription.size %></li>
@@ -15,9 +22,9 @@
         <li><strong>DELIVERY DAY</strong> <%= @flower_subscription.delivery_day %> at <%= @flower_subscription.time_of_day %></li>
       </ul>
       <div class="text-confirmation">
-        <p id="line1">Thank you for your selection of locally farmed flowers with us!  You will receive your Flovelle bouqet shorlty. </p>
-        <p id="line2">We’ll send the purchase overview to your registered email.  </p>
-        <p id="line3">If there are any changes you want to make to your subscription/ order, just change your preferences through your personal account and via our subscriptions panel</p>
+        <p id="line1">Thank you for your selection of locally farmed flowers with us! You will receive your Flovelle bouquet shortly. </p>
+        <p id="line2"> We’ll send the purchase overview to your registered email. </p>
+        <p id="line3"> If there are any changes you want to make to your subscription/order, change your preferences through your personal account and via your subscription order </p>
       </div>
 
     </div>
