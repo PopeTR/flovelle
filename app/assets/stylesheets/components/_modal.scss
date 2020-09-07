@@ -1,0 +1,63 @@
+/* Style the form element with a border around it */
+.container-modal {
+  background-color: $my-orange;
+  font-family: "Poppins", "sans-serif";
+
+}
+
+form {
+  border: 2px solid $my-grey;
+  display: grid;
+  margin-top: 20px;
+  padding: 22px;
+  text-align: center;
+}
+
+/* Add some padding and a grey background color to containers */
+.modal-input {
+  padding: 20px;
+  background-color: $my-orange!important;
+  color: $my-grey;
+}
+.modal-intro h2 {
+  color: $my-blue;
+}
+
+.modal-intro p {
+  color: $my-blue;
+}
+/* Style the input elements and the submit button */
+input[type=text], input[type=submit] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+}
+
+.label-modal {
+    display: inline-block;
+    margin-bottom: 0.2rem;
+    font-size: 16px;
+    color: $my-blue;
+
+}
+
+
+/* Add margins to the checkbox */
+input[type=checkbox] {
+  margin-top: 20px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #6886c5;
+  color: white;
+  border: none;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}

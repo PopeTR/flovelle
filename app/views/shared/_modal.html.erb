@@ -1,0 +1,21 @@
+<div class="container-modal">
+<form action="/">
+  <div class="modal-intro">
+    <h2>Subscribe to our Newsletter!</h2>
+    <p>Subscribe to our Flovelle monthly Newsletter and receive a 10% discount voucher on your first Flovelle purchase!</p>
+  </div>
+
+  <div class="modal-input" style="background-color:white">
+    <input type="text" placeholder="Name" name="name" required>
+    <input type="text" placeholder="Email address" name="mail" required>
+    <label class="label-modal">
+      <input type="checkbox" checked="checked" name="subscribe"> Flovelle Newsletter
+    </label>
+  </div>
+
+  <div class="modal-submit">
+    <input type="submit" value="Subscribe" action=>
+  </div>
+</form>
+</div>
+   <%= render 'shared/modal' %>
