@@ -1,2 +1,86 @@
-<h1>Fsubscriptions#edit</h1>
-<p>Find me in app/views/fsubscriptions/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <div class="edit-form">
+
+      </div>
+
+      <form class="simple_form edit_flower_subscription" id="edit_flower_subscription_17" novalidate="novalidate" action="/flower_subscriptions/17" accept-charset="UTF-8" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <input type="hidden" name="authenticity_token" value="Xjd1VG4FA/T2TqRVy19p5NKiSqpX708wBYF0q3jNM5tegrJC+boRRllHy8CQBdZpi/lyqW3T9tHS17Rsa5RE5Q==">
+
+        <div class="form-group flower_subscription_size">
+          <label class="" for="flower_subscription_size">
+            Size
+          </label>
+          <select class="form-control" name="flower_subscription[size]" id="flower_subscription_size">
+            <option value=""></option>
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+          </select>
+        </div>
+
+        <div class="form-group flower_subscription_frequency">
+          <label class="" for="flower_subscription_frequency">
+            Frequency
+          </label>
+          <select class="form-control" name="flower_subscription[frequency]" id="flower_subscription_frequency">
+            <option value=""></option>
+            <option value="1">Monthly</option>
+            <option value="2">Forthnightly</option>
+            <option value="4">Weekly</option>
+          </select>
+        </div>
+
+        <div class="form-group flower_subscription_delivery_day">
+          <label class="" for="flower_subscription_delivery_day">
+            Delivery day
+          </label>
+          <select class="form-control" name="flower_subscription[delivery_day]" id="flower_subscription_delivery_day">
+            <option value=""></option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+
+        <div class="form-group flower_subscription_time_of_day">
+          <label class="" for="flower_subscription_time_of_day">
+            Time slot
+          </label>
+          <select class="form-control" name="flower_subscription[time_of_day]" id="flower_subscription_time_of_day">
+            <option value=""></option>
+            <option value="8am-12pm">8am-12pm</option>
+            <option value="13pm-15pm">13pm-15pm</option>
+            <option value="15pm-18pm">15pm-18pm</option>
+          </select>
+        </div>
+        <input type="submit" name="commit" value="Update now" data-disable-with="submit" class="order-button">
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>

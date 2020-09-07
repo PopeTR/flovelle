@@ -41,13 +41,13 @@ class FlowerSubscriptionsController < ApplicationController
   end
 
   def edit
+    @flower_subscription = FlowerSubscription.find(params[:id])
   end
 
   def update
     @flower_subscription = FlowerSubscription.find(params[:id])
     @flower_subscription.update(flower_params)
-    redirect_to "/accounts"
-    # PATCH   "/flower_subscriptions/:id", to: "flower_subscription#update", as: :update_subscription
+    redirect_to flower_subscription_path(@flower_subscription)
   end
 
   def destroy
