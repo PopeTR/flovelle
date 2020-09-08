@@ -1,5 +1,6 @@
 const initNavbar = () => {
   const pageContainer = document.querySelector('.container-home')
+  if (pageContainer) {
   let prevScrollpos = pageContainer.scrollTop;
 
   const navbar = document.getElementById("navbar")
@@ -12,6 +13,7 @@ const initNavbar = () => {
     }
     prevScrollpos = currentScrollPos;
   })
+  }
 }
 
 export { initNavbar }
