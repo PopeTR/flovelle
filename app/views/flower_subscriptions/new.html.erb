@@ -6,12 +6,12 @@ Use this for testing only!!
 
         <div class="status-bar" id="sticky-bar">
           <div class="content-status">
-            <ul> 
-              
+            <ul>
+
               <li id="" class="full-black-border"> 01 </li>
               <li id="status-options"> 02 </li>
-              <li id="status-options"> 03 </li> 
-              <li id="status-options"> 04 </li> 
+              <li id="status-options"> 03 </li>
+              <li id="status-options"> 04 </li>
             </ul>
             <div class="start-subscription">
               Start your subscription!
@@ -37,19 +37,19 @@ Use this for testing only!!
 
                       <div class="row-flowers">
                         <div class="flower-choice col-12">
-                          <% image_collection = ["Basic Flower.jpg","Blossom Field", "Exotic Bouquet",
+                          <%# image_collection = ["Basic Flower.jpg","Blossom Field", "Exotic Bouquet",
                             "Mixed Bouquet", "Rose Field", "Yellow Flowers" ] %>
                           <fieldset class="form-group radio_buttons required flower-subscription-images">
 
                             <input type="hidden" name="flower_subscription[images]" value="">
-                            <% image_collection.each_with_index do |image, index| %>
+                            <%# image_collection.each_with_index do |image, index| %>
                               <div class="form-check flower-choice">
                                 <input class="form-check-input radio_buttons required" type="radio" value="image_tag" name="flower_subscription[images]" id="flower_subscription_image-#{index}">
                                 <label class="form-check-label collection_radio_buttons" for="flower_subscription_image-#{index}">
                                 <%= image_tag(image) %>
                                 </label>
                               </div>
-                            <% end %>
+                            <%# end %>
                           </fieldset>
                         </div>
                       </div>

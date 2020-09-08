@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi! Welcome to Flovelle <%= @user.first_name %></h1>
+    <p>
+      You have successfully signed up to our flower subscription service,
+      your username is: <%= @user.first_name %><br>
+    </p>
+    <p>
+
+      To login to the site, just follow this link: <%= @user_url %>
+    </p>
+    <p>Thanks for joining our Flovelle community and supporting our local flower farmers!</p>
+    <p>Have a great day!</p>
+
+     <p>Yours sincerly, </p>
+     <p>Team Flovelle!</p>
+  </body>
+</html>
