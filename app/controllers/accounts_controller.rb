@@ -1,13 +1,19 @@
 class AccountsController < ApplicationController
   def index
-    @bookings = current_user.flower_subscriptions
-    @order = current_user.flower_subscriptions.first
-    @last_delivery = @order.delivery_date
-    @delivery = delivery_check
+    if current_user.role == "manager"
+      dashboard
+    else
+      @bookings = current_user.flower_subscriptions
+      @order = current_user.flower_subscriptions.first
+      @last_delivery = @order.delivery_date
+      @delivery = delivery_check
+    end
+  end
+
+  def dashboard
     @suppliers = Supplier.all
     @users = User.all
     @flower_subscriptions = FlowerSubscription.all
-
   end
 
   def show
