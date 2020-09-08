@@ -18,9 +18,8 @@ class UsersController < ApplicationController
       redirect_to user_path(@user, notice: 'User was successfully created.')
     else
       render :new
+    end
   end
-
-
 
     # respond_to do |format|
     #   if @user.save
