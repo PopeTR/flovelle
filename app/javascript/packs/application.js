@@ -33,6 +33,12 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initNavbar();
+
+
+
+  document.querySelector('#cancel_edit').addEventListener('click', event => {
+    document.querySelector('#myModal').remove();
+  })
 });
 
 
