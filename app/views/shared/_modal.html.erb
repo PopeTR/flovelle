@@ -1,11 +1,13 @@
-<div class="container-modal">
+<div class="container-modal" id="myModal">
+
+
 <form id="form-modal" action="/">
   <div class="modal-intro">
     <h2>Subscribe to our Newsletter!</h2>
     <p>Subscribe to our Flovelle monthly Newsletter and receive a 10% discount voucher on your first Flovelle purchase!</p>
   </div>
 
-  <div class="modal-input" style="background-color:white">
+  <div class="modal-input">
     <input type="text" placeholder="Name" name="name" required>
     <input type="text" placeholder="Email address" name="mail" required>
     <label class="label-modal">
@@ -13,9 +15,14 @@
     </label>
   </div>
 
+
+
   <div class="modal-submit">
-    <input type="submit" value="Subscribe" action=>
+    <input type="submit" id="submit-edit" value="Subscribe" >
+    <input type="button" class="close-button" id="cancel_edit" value="Cancel"></input>
+
   </div>
 </form>
 </div>
 <!--     render 'shared/modal'  -->
+<!-- make mailchimp for receiving the emails(of needed) -->

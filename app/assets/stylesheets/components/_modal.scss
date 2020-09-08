@@ -1,26 +1,44 @@
 /* Style the form element with a border around it */
 .container-modal {
-  background-color: $my-orange;
+  background-color:  #f9f9f9;
   font-family: "Poppins", "sans-serif";
-
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
 }
 
 #form-modal {
-  border: 2px solid $my-grey;
+  // border: 2px solid $my-grey;
   display: grid;
-  margin-top: 20px;
-  padding: 22px;
+  margin-top: 100px;
+  padding: 48px;
+  padding-bottom: 34px;
   text-align: center;
+  background-color: #f9f9f9;
+  border: none;
+  box-shadow: 14px 53px 25px rgba(1,1,1,0.5);
+  width: 500px;
+  opacity: 0.96;
+  border-radius: 5%;
 }
 
 /* Add some padding and a grey background color to containers */
 .modal-input {
-  padding: 20px;
-  background-color: $my-orange!important;
+  padding: 2px;
+  background-color: #f9f9f9!important;
   color: $my-grey;
 }
 .modal-intro h2 {
   color: $my-blue;
+  margin-top: 4px;
 }
 
 .modal-intro p {
@@ -29,22 +47,53 @@
 /* Style the input elements and the submit button */
 input[type=text], input[type=submit] {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  border-radius: 5px
+}
 
+.modal-submit {
+  padding: 2px;
 }
 
 .label-modal {
-    display: inline-block;
-    margin-bottom: 0.2rem;
-    font-size: 16px;
-    color: $my-blue;
-
+  display: inline-block;
+  margin-bottom: 0.2rem;
+  font-size: 16px;
+  color: $my-blue;
 }
 
+input#submit-edit {
+  background-color: #6886c5!important;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  margin: 4px 0;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 5px
+}
+
+input#cancel_edit {
+  background-color: #6886c5!important;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  margin: 4px 0;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 5px
+}
+
+input#cancel_edit:hover {
+  opacity: 0.8;
+
+}
 
 /* Add margins to the checkbox */
 input[type=checkbox] {
