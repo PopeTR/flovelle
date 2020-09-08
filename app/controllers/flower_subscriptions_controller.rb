@@ -46,17 +46,22 @@ class FlowerSubscriptionsController < ApplicationController
 
   def update
     @flower_subscription = FlowerSubscription.find(params[:id])
+    # @flower_subscription = FormatSubscriptionService.new(flower_subscription: @flower_subscription).call
     @flower_subscription.update(flower_params)
+    # raise
     redirect_to flower_subscription_path(@flower_subscription)
   end
 
   def destroy
+    @flower_subscription = FlowerSubscription.find(params[:id])
+    @flower_subscription.destroy
+    redirect_to accounts_path
   end
 
   private
 
   def flower_params
-    params.require(:flower_subscription).permit(:preferences, :size, :frequency, :delivery_day, :time_of_day)
+    params.require(:flower_subscription).permit(:price_cents, :preferences, :size, :frequency, :delivery_day, :time_of_day)
   end
 
 end
