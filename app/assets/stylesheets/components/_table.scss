@@ -4,17 +4,14 @@
 #table-scroll {
   height:200px;
   overflow:auto;
-  margin-top:20px;
+  margin-top:32px;
 }
 
 #table-wrapper table {
   width:100%;
 
 }
-#table-wrapper table * {
-  background:lightgray;
-  color:black;
-}
+
 #table-wrapper table thead th .text {
   position:absolute;
   top:-30px;
@@ -27,4 +24,12 @@
 td {
   min-width: 100px;
   height: 30px;
+}
+
+tbody {
+  color: #252424
+}
+
+#edit-links {
+  font-color: $my-blue !important;
 }
