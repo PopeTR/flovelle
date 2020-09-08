@@ -3,84 +3,39 @@
     <div class="col-12">
 
       <div class="edit-form">
+        <div class="edit-form-background-image col-lg-6">
+          <div class="edit-form-image" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1495030071804-96e2e8b6e25f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80);">
+            
+          </div>
+          
+        </div>
 
+        <div class="edit-form-input col-lg-6">
+
+          <%= simple_form_for(@flower_subscription, url: flower_subscription_path(@flower_subscription),
+          method: :patch) do |f| %>
+
+          <%= f.input :size, as: :select, collection: ["Small", "Medium", "Large"],
+          input_html: {class: "input-field" },
+          wrapper_html: {class: "wrapper-field"}, label_html: {class: "label-field"} %>
+
+          <%= f.input :frequency, as: :select, collection: ["Monthly", "Forthnightly", "Weekly"],
+          input_html: {class: "input-field" },
+          wrapper_html: {class: "wrapper-field"}, label_html: {class: "label-field"}%>
+
+          <%= f.input :delivery_day, as: :select, collection: ["Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday", "Saturday", "Sunday"], input_html: {class: "input-field"},
+          wrapper_html: {class: "wrapper-field"}, label_html: {class: "label-field"} %>
+
+          <%= f.input :time_of_day, as: :select, collection: ["8am-12pm", "13pm-15pm", "15pm-18pm"],
+          input_html: {class: "input-field"},
+          wrapper_html: {class: "wrapper-field"}, label_html: {class: "label-field"} %>
+
+          <%= f.submit :Update %>
+        </div>
+
+        <% end %>
       </div>
-
-      <form class="simple_form edit_flower_subscription" id="edit_flower_subscription_17" novalidate="novalidate" action="/flower_subscriptions/17" accept-charset="UTF-8" method="post">
-        <input type="hidden" name="_method" value="patch">
-        <input type="hidden" name="authenticity_token" value="Xjd1VG4FA/T2TqRVy19p5NKiSqpX708wBYF0q3jNM5tegrJC+boRRllHy8CQBdZpi/lyqW3T9tHS17Rsa5RE5Q==">
-
-        <div class="form-group flower_subscription_size">
-          <label class="" for="flower_subscription_size">
-            Size
-          </label>
-          <select class="form-control" name="flower_subscription[size]" id="flower_subscription_size">
-            <option value=""></option>
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-          </select>
-        </div>
-
-        <div class="form-group flower_subscription_frequency">
-          <label class="" for="flower_subscription_frequency">
-            Frequency
-          </label>
-          <select class="form-control" name="flower_subscription[frequency]" id="flower_subscription_frequency">
-            <option value=""></option>
-            <option value="1">Monthly</option>
-            <option value="2">Forthnightly</option>
-            <option value="4">Weekly</option>
-          </select>
-        </div>
-
-        <div class="form-group flower_subscription_delivery_day">
-          <label class="" for="flower_subscription_delivery_day">
-            Delivery day
-          </label>
-          <select class="form-control" name="flower_subscription[delivery_day]" id="flower_subscription_delivery_day">
-            <option value=""></option>
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-          </select>
-        </div>
-
-        <div class="form-group flower_subscription_time_of_day">
-          <label class="" for="flower_subscription_time_of_day">
-            Time slot
-          </label>
-          <select class="form-control" name="flower_subscription[time_of_day]" id="flower_subscription_time_of_day">
-            <option value=""></option>
-            <option value="8am-12pm">8am-12pm</option>
-            <option value="13pm-15pm">13pm-15pm</option>
-            <option value="15pm-18pm">15pm-18pm</option>
-          </select>
-        </div>
-        <input type="submit" name="commit" value="Update now" data-disable-with="submit" class="order-button">
-      </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   </div>
 </div>
