@@ -56,21 +56,26 @@
     <div class="col-6 account-column">
       <h3> <strong> Personal Information </strong> </h3>
       <div class="account-description">
-      <div class="border-bottom">
-        <p> <strong> Name </strong> </p>
-        <p id="black-p"><i class="fas fa-user"></i> <%=current_user.first_name%></p>
-      </div>
-      <div class="border-bottom">
-        <p> <strong> E-Mail </strong> </p>
-        <p id="black-p"><i class="fas fa-envelope"></i> <%=current_user.email%></p>
-      </div>
-      <div class="border-bottom">
-        <p> <strong> Phone Number </strong> </p>
-        <p id="black-p"><i class="fas fa-phone-alt"></i> +48 76 4278 3829</p>
-      </div>
-      <div class="border-bottom">
-        <p> <strong> Address </strong> </p>
-        <p> <%= @start_time %>
+        <form method="patch" action="accounts/<%=current_user.id%>/edit" class="button_to">
+          <div>
+            <input class="order-button" value="Edit" type="submit" />
+          </div>
+        </form>
+        <div class="border-bottom">
+          <p> <strong> Name </strong> </p>
+          <p id="black-p"><i class="fas fa-user"></i> <%= current_user.first_name %> <%= current_user.last_name %></p>
+        </div>
+        <div class="border-bottom">
+          <p> <strong> E-Mail </strong> </p>
+          <p id="black-p"><i class="fas fa-envelope"></i> <%=current_user.email%></p>
+        </div>
+        <div class="border-bottom">
+          <p> <strong> Phone Number </strong> </p>
+          <p id="black-p"><i class="fas fa-phone-alt"></i> +48 76 4278 3829</p>
+        </div>
+        <div class="border-bottom">
+          <p> <strong> Address </strong> </p>
+          <p> <%= @start_time %>
           <p id="black-p"><i class="fas fa-map-marker-alt"></i> <%=current_user.address%>, <%=current_user.zipcode%></p>
         </div>
       </div>

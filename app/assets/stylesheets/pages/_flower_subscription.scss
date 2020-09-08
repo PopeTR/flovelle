@@ -7,6 +7,10 @@
   font-weight: 900;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .header-flowertype, .header-datetype, .header-bouquettype, .header-frequencytype {
   font-weight: 900;
   font-size: 26px;
@@ -20,8 +24,13 @@
 .content-status {
 	width: 100%;
 	padding-top: 20px;
+  padding-bottom: 20px;
 	// padding-bottom: 20px;
 	background-color: $my-grey;
+}
+
+.status-bar {
+  width: 100%;
 }
 
 .start-subscription {
@@ -42,8 +51,8 @@
 
 
 #sticky-bar {
-  position: sticky;
-  top: 139px;
+  position: fixed;
+  top: 0;
   z-index: 1;
 }
 
@@ -61,7 +70,7 @@
 		font-size: 16px;
 		font-weight: 500;
 		line-height: 10px;
-		// border: solid 1px lightgrey;
+		border: solid 1px lightgrey;
 	}
 }
 
@@ -200,7 +209,7 @@
 hr {
     width:30%;
     margin:30px auto;
-
+    color: $my-blue;
 }
 
 .product-customize-frequency {
@@ -319,4 +328,10 @@ label {
 
 .form-check-label.collection_radio_buttons.flower-choice-image p {
   margin: 10px 0px;
+}
+
+.header-timetype {
+  font-weight: 900;
+  font-size: 26px;
+  margin: 20px;
 }

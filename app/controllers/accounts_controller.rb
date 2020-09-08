@@ -23,6 +23,7 @@ class AccountsController < ApplicationController
   end
 
   def edit
+    @user = User.find(current_user.id)
   end
 
   def delivery_check
@@ -45,4 +46,5 @@ class AccountsController < ApplicationController
     end
     @last_delivery = @next_delivery
   end
+
 end
