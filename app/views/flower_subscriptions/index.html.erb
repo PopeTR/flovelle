@@ -5,21 +5,18 @@
 
         <div class="status-bar" id="sticky-bar">
           <div class="content-status">
-            <ul> 
+            <ul>
               <li id="" class="full-black-border"> 01 </li>
               <li id="status-options"> 02 </li> <!-- add full-border-black minus left -->
               <li id="status-options"> 03 </li> <!-- add full-border-black minus left -->
               <li id="status-options"> 04 </li> <!-- add full-border-black minus left -->
             </ul>
-            <div class="start-subscription">
-              Start your subscription!
-            </div>
           </div>
         </div>
 
         <div class="field columns">
           <div class="main-title">
-            Customize your subscription:
+            <h1>Customize your subscription:</h1>
           </div>
           <div id="product-type">
 
@@ -27,183 +24,212 @@
               <div class="product-card">
                 <div class="product-customize">
 
-                  <p class="text-center">
-                    What kind of flowers would you like in your bouquet?
-                  </p>
+                  <h1 class="header-bouquettype">
+                          What size do you want your bouquet to be?
+                        </h1>
+                        <hr>
+                        <!-- make each section a partial (with fieldset and it's surrounding container!!) -->
+                          <div class="product-customize-size">
 
-                  <div class="product-customize-flowers">
+                            <fieldset class="form-group radio_buttons required flower_subscription_size" style="width: 100%;">
+                              <input type="hidden" name="flower_subscription[size]" value="">
+                              <div class="row subscription-card-section">
+                              <div class="form-check form-size col-lg-3 col-sm-9">
+                                <div class="subscription-image">
+                                  <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="">
+                                </div>
+                                <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Small" name="flower_subscription[size]" id="flower_subscription_size_small">
+                                <label class="form-check-label collection_radio_buttons" for="flower_subscription_size_small">
+                                  Small
+                                </label>
+                              </div>
+                              <div class="form-check form-size col-lg-3 col-sm-9">
+                                <div class="subscription-image">
+                                  <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="">
+                                </div>
+                                <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Medium" name="flower_subscription[size]" id="flower_subscription_size_medium">
+                                <label class="form-check-label collection_radio_buttons" for="flower_subscription_size_medium">
+                                  Medium
+                                </label>
+                              </div>
+                              <div class="form-check form-size col-lg-3 col-sm-9">
+                                <div class="subscription-image">
+                                  <img src="https://images.unsplash.com/photo-1497276236755-0f85ba99a126?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="">
+                                </div>
+                                <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Large" name="flower_subscription[size]" id="flower_subscription_size_large">
+                                <label class="form-check-label collection_radio_buttons" for="flower_subscription_size_large">
+                                  Large
+                                </label>
+                                </div>
+                              </div>
+
+
+                            </fieldset>
+                          </div>
+
+
+
+                  <h1 class="header-flowertype">
+                    What kind of flowers would you like in your bouquet?
+                  </h1>
+                  <hr>
+
+                  <div class="product-customize-flowers container">
                     <form class="simple_form new_flower_subscription" id="new_flower_subscription" novalidate="novalidate" action="/flower_subscriptions" accept-charset="UTF-8" method="post">
                       <input type="hidden" name="authenticity_token" value="am1OVWFikNBqB9tHD46TQGNeI1VymaafKVSF6qD3LxPZCTq/SFxraUeLDdeQ2OvUmCQKWcVS97XylwH3BwgzGg==">
 
-                      <div class="row-flowers">
-                        <div class="flower-container col-12 flower-subscription-images">
+                      <div class="row justify-content-md-center">
+                        <div class="flower-container flower-subscription-images">
                           <% image_collection = ["Basic Flower.jpg","Blossom Field.jpg", "Exotic Bouquet.jpg",
-                            "Mixed Bouquet.jpg", "Rose Field.jpg", "Yellow Flowers.jpg" ] %>
-                            <% flower_types = ["Anemone","Gladiolus","Camelia","Chrysanthemum","Rose","Tullip"] %>
+                            "Mixed Bouquet.jpg", "Rose Field.jpg", "Yellow Flowers.jpg", "iris.jpg", "hydrangea.jpg" ] %>
+                            <% flower_types = ["Anemone","Gladiolus","Camelia","Chrysanthemum","Rose","Tulip","Iris","Hydrangea"] %>
 
-                            <fieldset class="form-group radio_buttons required flower-subscription-images">
+                            <div class="form-group radio_buttons required flower-subscription-images">
 
                               <input type="hidden" name="flower_subscription[images]" value="">
-                              <div class="form-check image-grid-holder">
+                              <div class="subscription-cards-subscription">
 
                                 <% image_collection.each_with_index do |image, index| %>
-                                <div>
+                                <div class="flower-card col-lg-3 col-md-3 col-sm-6">
                                 <input class="form-check-input flower-form-image-checks radio_buttons required flower-choice-image" type="radio" value="image_tag" name="flower_subscription[images]" id="flower_subscription_image-<%= index %>">
                                 <label class="form-check-label collection_radio_buttons flower-choice-image" for="flower_subscription_image-<%= index %>">
                                   <%= image_tag(image) %>
                                   <p>
-                                    Flower type: <%= flower_types[index] %>
+                                    <%= flower_types[index] %>
                                   </p>
                                 </label>
                                 </div>
                               <% end %>
                               </div>
-                            </fieldset>
+                            </div>
                           </div>
                         </div>
+                      </div>
 
-                        <p class="text-center">
-                          What size do you want your bouquet to be?
-                        </p>
-                        <!-- make each section a partial (with fieldset and it's surrounding container!!) -->
-                        <div class="product-customize-size">
 
-                          <fieldset class="form-group radio_buttons required flower_subscription_size d-flex flex-row justify-content-center align-items-center">
-                            <input type="hidden" name="flower_subscription[size]" value="">
 
-                            <div class="form-check form-size">
-                              <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Small" name="flower_subscription[size]" id="flower_subscription_size_small">
-                              <label class="form-check-label collection_radio_buttons" for="flower_subscription_size_small">
-                                Small
-                              </label>
-                            </div>
-                            <div class="form-check form-size">
-                              <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Medium" name="flower_subscription[size]" id="flower_subscription_size_medium">
-                              <label class="form-check-label collection_radio_buttons" for="flower_subscription_size_medium">
-                                Medium
-                              </label>
-                            </div>
-                            <div class="form-check form-size">
-                              <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Large" name="flower_subscription[size]" id="flower_subscription_size_large">
-                              <label class="form-check-label collection_radio_buttons" for="flower_subscription_size_large">
-                                Large
-                              </label>
-                            </div>
-                          </fieldset>
-                        </div>
+
 
                         <br>
-                        <p class="text-center">
+                        <h1 class="header-frequencytype">
                           How often do you want to receive your flowers?
-                        </p>
+                        </h1>
+                        <hr>
                         <div class="product-customize-frequency">
                           <fieldset class="form-group radio_buttons required flower_subscription_frequency d-flex flex-row justify-content-center align-items-center">
                             <input type="hidden" name="flower_subscription[frequency]" value="">
-
-                            <div class="form-check form-frequency">
-                              <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Monthly" name="flower_subscription[frequency]" id="flower_subscription_frequency_monthly">
-                              <label class="form-check-label collection_radio_buttons" for="flower_subscription_frequency_monthly">
-                                Monthly
-                              </label>
-                            </div>
-                            <div class="form-check form-frequency">
-                              <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Bimonthly" name="flower_subscription[frequency]" id="flower_subscription_frequency_bimonthly">
-                              <label class="form-check-label collection_radio_buttons" for="flower_subscription_frequency_bimonthly">
-                                Forthnightly
-                              </label>
-                            </div>
-                            <div class="form-check form-frequency">
-                              <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Weekly" name="flower_subscription[frequency]" id="flower_subscription_frequency_weekly">
-                              <label class="form-check-label collection_radio_buttons" for="flower_subscription_frequency_weekly">
-                                Weekly
-                              </label>
-                            </div>
+                              <div class="row monthly-frequency">
+                                <div class="form-check form-frequency col-lg-3 col-sm-9">
+                                  <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Monthly" name="flower_subscription[frequency]" id="flower_subscription_frequency_monthly">
+                                  <label class="form-check-label collection_radio_buttons" for="flower_subscription_frequency_monthly">
+                                    Monthly
+                                  </label>
+                                </div>
+                                <div class="form-check form-frequency col-lg-4 col-sm-9">
+                                  <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Bimonthly" name="flower_subscription[frequency]" id="flower_subscription_frequency_bimonthly">
+                                  <label class="form-check-label collection_radio_buttons" for="flower_subscription_frequency_bimonthly">
+                                    Forthnightly
+                                  </label>
+                                </div>
+                                <div class="form-check form-frequency col-lg-4 col-sm-9">
+                                  <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Weekly" name="flower_subscription[frequency]" id="flower_subscription_frequency_weekly">
+                                  <label class="form-check-label collection_radio_buttons" for="flower_subscription_frequency_weekly">
+                                    Weekly
+                                  </label>
+                                </div>
+                              </div>
                           </fieldset>
                         </div>
 
                         <br>
-                        <p class="text-center">
+                        <h1 class="header-datetype">
                           When do you want to receive your flowers:
-                        </p>
+                        </h1>
+                        <hr>
                         <div class="product-customize-dates">
                           <div class="product-customize-dates-days">
 
                             <fieldset class="form-group radio_buttons optional flower_subscription_delivery_day d-flex flex-row justify-content-between align-items-center">
+                              <div class="row">
                               <input type="hidden" name="flower_subscription[delivery_day]" value="">
-                              <div class="form-check form-days">
+                              <div class="form-check form-days col-lg-4">
                                 <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Mon" name="flower_subscription[delivery_day]" id="flower_subscription_delivery_day_mon">
                                 <label class="form-check-label collection_radio_buttons" for="flower_subscription_delivery_day_mon">
                                   Mon
                                 </label>
                               </div>
-                              <div class="form-check form-days">
+                              <div class="form-check form-days col-lg-3">
                                 <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Tue" name="flower_subscription[delivery_day]" id="flower_subscription_delivery_day_tue">
                                 <label class="form-check-label collection_radio_buttons" for="flower_subscription_delivery_day_tue">
                                   Tue
                                 </label>
                               </div>
-                              <div class="form-check form-days">
+                              <div class="form-check form-days col-lg-3">
                                 <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Wed" name="flower_subscription[delivery_day]" id="flower_subscription_delivery_day_wed">
                                 <label class="form-check-label collection_radio_buttons" for="flower_subscription_delivery_day_wed">
                                   Wed
                                 </label>
                               </div>
-                              <div class="form-check form-days">
+                              <div class="form-check form-days col-lg-3">
                                 <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Thu" name="flower_subscription[delivery_day]" id="flower_subscription_delivery_day_thu">
                                 <label class="form-check-label collection_radio_buttons" for="flower_subscription_delivery_day_thu">
                                   Thu
                                 </label>
                               </div>
-                              <div class="form-check form-days">
+                              <div class="form-check form-days col-lg-3">
                                 <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Fri" name="flower_subscription[delivery_day]" id="flower_subscription_delivery_day_fri">
                                 <label class="form-check-label collection_radio_buttons" for="flower_subscription_delivery_day_fri">
                                   Fri
                                 </label>
                               </div>
-                              <div class="form-check form-days">
+                              <div class="form-check form-days col-lg-3">
                                 <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Sat" name="flower_subscription[delivery_day]" id="flower_subscription_delivery_day_sat">
                                 <label class="form-check-label collection_radio_buttons" for="flower_subscription_delivery_day_sat">
                                   Sat
                                 </label>
                               </div>
-                              <div class="form-check form-days">
+                              <div class="form-check form-days col-lg-3">
                                 <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Sun" name="flower_subscription[delivery_day]" id="flower_subscription_delivery_day_sun">
                                 <label class="form-check-label collection_radio_buttons" for="flower_subscription_delivery_day_sun">
                                   Sun
                                 </label>
                               </div>
+                            </div>
                             </fieldset>
+
+                            <h1 class="header-datetype">
+                              What time do you want to receive your flowers:
+                            </h1>
+                            <hr>
 
                             <fieldset class="form-group radio_buttons optional flower_subscription_time_of_day d-flex flex-row justify-content-center align-items-center">
                               <input type="hidden" name="flower_subscription[time_of_day]" value="">
-
-                              <div class="form-check form-dates">
-                                <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Morning" name="flower_subscription[time_of_day]" id="flower_subscription_time_of_day_morning">
-                                <label class="form-check-label collection_radio_buttons" for="flower_subscription_time_of_day_morning">
-                                 8am-12pm
+                              <div class="row">
+                                <div class="form-check form-dates">
+                                  <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Morning" name="flower_subscription[time_of_day]" id="flower_subscription_time_of_day_morning">
+                                  <label class="form-check-label collection_radio_buttons" for="flower_subscription_time_of_day_morning">
+                                   8am-12pm
+                                 </label>
+                               </div>
+                               <div class="form-check form-dates">
+                                <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Afternoon" name="flower_subscription[time_of_day]" id="flower_subscription_time_of_day_afternoon">
+                                <label class="form-check-label collection_radio_buttons" for="flower_subscription_time_of_day_afternoon">
+                                 13pm-15pm
                                </label>
                              </div>
                              <div class="form-check form-dates">
-                              <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Afternoon" name="flower_subscription[time_of_day]" id="flower_subscription_time_of_day_afternoon">
-                              <label class="form-check-label collection_radio_buttons" for="flower_subscription_time_of_day_afternoon">
-                               13pm-15pm
-                             </label>
-                           </div>
-                           <div class="form-check form-dates">
-                            <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Evening" name="flower_subscription[time_of_day]" id="flower_subscription_time_of_day_evening">
-                            <label class="form-check-label collection_radio_buttons" for="flower_subscription_time_of_day_evening">
-                              15pm-18pm
-                            </label>
+                              <input class="form-check-input flower-form-checks radio_buttons optional" type="radio" value="Evening" name="flower_subscription[time_of_day]" id="flower_subscription_time_of_day_evening">
+                              <label class="form-check-label collection_radio_buttons" for="flower_subscription_time_of_day_evening">
+                                15pm-18pm
+                              </label>
+                            </div>
                           </div>
                         </fieldset>
                       </div>
                     </div>
-                    <p class="text-center order-ending">
-                      Checkout below:
-                    </p>
 
                       <% if current_user.nil? %>
-                        <button type="button" class="btn btn-flat" data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" class="btn btn-flat order-button col-9" id="subscription-button" data-toggle="modal" data-target="#exampleModal">
                       Sign Up & Order Now
                     </button>
                       <% else %>
