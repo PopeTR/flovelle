@@ -3,16 +3,20 @@
 	flex-wrap: wrap;
 	padding-top: 163px;
 	height: 100vh;
-	background-color: white;
-}
-
-.input-field {
-
 }
 
 .edit-form-input{
 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
 	z-index: 1;
+	padding: 40px;
+	color: $my-grey;
+	background-color: grey;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.edit-form-background-image {
+	padding: 0;
+	margin-left: -2.2rem;
 }
 
 .edit-form-image {
@@ -22,7 +26,6 @@
 	width: 100vw;
 	z-index: -1;
 	top: 0;
-	position: absolute;
 }
 
 .picture-container {
