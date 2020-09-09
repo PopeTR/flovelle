@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 gem "simple_calendar", "~> 2.0"
 gem 'jquery-rails'
+gem 'twilio-ruby', '~> 5.40.1'
 
 
 # Use Active Model has_secure_password
