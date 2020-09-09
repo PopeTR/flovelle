@@ -18,8 +18,6 @@ class FlowerSubscriptionsController < ApplicationController
   end
 
   def create
-    @order = current_user.flower_subscriptions.first
-    @last_delivery = @order.delivery_date
     @flower_subscription = FlowerSubscription.new(params[:flower_subscription]
       .permit(:preferences, :state, :price_cents, :flower_subscription_sku, :size, :frequency, :delivery_date,  :delivery_day, :time_of_day))
     @flower_subscription.user_id = current_user.id
