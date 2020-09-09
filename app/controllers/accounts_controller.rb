@@ -4,10 +4,11 @@ class AccountsController < ApplicationController
       dashboard
     elsif current_user.flower_subscriptions.empty?
       @bookings = current_user.flower_subscriptions
-      @order = current_user.flower_subscriptions.first
+      @order = current_user.flower_subscriptions.last
     else
+      # If they have a delivery
       @bookings = current_user.flower_subscriptions
-      @order = current_user.flower_subscriptions.first
+      @order = current_user.flower_subscriptions.last
       @last_delivery = @order.delivery_date
       @delivery = delivery_check
     end

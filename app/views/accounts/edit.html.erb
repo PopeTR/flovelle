@@ -1,17 +1,20 @@
+<div class="container-home">
 <div class="container">
+  <div class="background-howitworks" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1495030071804-96e2e8b6e25f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80);">
+  </div>
+
   <div class="row">
     <div class="col-12">
-      
+
       <div class="edit-acccount-form">
         <div class="account-form-image col-lg-6">
-          <div class="background-howitworks" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1495030071804-96e2e8b6e25f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80);">
-          </div>
+
         </div>
 
-        <div class="account-form-information col-lg-6">
+        <div class="account-form-information edit-form-input col-lg-6 label-color">
 
           <%= simple_form_for @user do |f| %>
-            <%= f.input :first_name %>
+            <%= f.input :first_name, input_html: {class: "account-padding"}, wrapper_html: {class: "account-padding" }%>
             <%= f.input :last_name %>
             <%= f.input :email %>
             <%= f.input :address %>
@@ -24,4 +27,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

@@ -14,11 +14,14 @@ class FlowerSubscriptionsController < ApplicationController
   end
 
   def new
+
   end
 
   def create
+    @order = current_user.flower_subscriptions.first
+    @last_delivery = @order.delivery_date
     @flower_subscription = FlowerSubscription.new(params[:flower_subscription]
-      .permit(:preferences, :state, :price_cents, :flower_subscription_sku, :size, :frequency, :delivery_day, :time_of_day))
+      .permit(:preferences, :state, :price_cents, :flower_subscription_sku, :size, :frequency, :delivery_date,  :delivery_day, :time_of_day))
     @flower_subscription.user_id = current_user.id
 
     @flower_subscription = FormatSubscriptionService.new(flower_subscription: @flower_subscription).call
@@ -89,7 +92,7 @@ class FlowerSubscriptionsController < ApplicationController
   private
 
   def flower_params
-    params.require(:flower_subscription).permit(:price_cents, :preferences, :size, :frequency, :delivery_day, :time_of_day)
+    params.require(:flower_subscription).permit(:price_cents, :preferences, :size, :frequency, :delivery_day, :delivery_date, :time_of_day)
   end
 
 end

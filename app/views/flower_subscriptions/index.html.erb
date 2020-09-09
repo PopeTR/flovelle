@@ -51,7 +51,7 @@
 
                                   <div class="form-check form-size col-lg-3 col-sm-9 size-select" data-section="#section-2">
                                     <div class="subscription-image">
-                                      <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="">
+                                      <%= image_tag "small-sub1.jpg" %>
                                     </div>
                                     <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Small" name="flower_subscription[size]" id="flower_subscription_size_small">
                                     <label class="form-check-label collection_radio_buttons" for="flower_subscription_size_small">
@@ -62,7 +62,7 @@
 
                                 <div class="form-check form-size col-lg-3 col-sm-9 size-select" data-section="#section-2">
                                   <div class="subscription-image">
-                                    <img src="https://images.unsplash.com/photo-1533616688419-b7a585564566?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="">
+                                    <%= image_tag "medium-sub.jpg" %>
                                   </div>
                                   <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Medium" name="flower_subscription[size]" id="flower_subscription_size_medium">
                                   <label class="form-check-label collection_radio_buttons" for="flower_subscription_size_medium">
@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="form-check form-size col-lg-3 col-sm-9 size-select" data-section="#section-2">
                                   <div class="subscription-image">
-                                    <img src="https://images.unsplash.com/photo-1497276236755-0f85ba99a126?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="">
+                                    <%= image_tag "large-sub.jpg" %>
                                   </div>
                                   <input class="form-check-input flower-form-checks radio_buttons required" type="radio" value="Large" name="flower_subscription[size]" id="flower_subscription_size_large">
                                   <label class="form-check-label collection_radio_buttons" for="flower_subscription_size_large">
@@ -154,6 +154,22 @@
                           </div>
 
                           <br>
+
+                          <h1 class="header-datetype" id="section-4">
+                            What date do you want to receive your flowers:
+                          </h1>
+                          <hr>
+                          <div class="product-customize-date">
+                            <div class="input-group date">
+                                <input type="date" data-date-format="dd/mm/yyyy" name="flower_subscription[delivery_date]" id="flower_subscription_delivery_date">
+                                <label class="form-check-label" for="flower_subscription_delivery_date"></label>
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                          </div>
+
+
                           <h1 class="header-datetype" id="section-4">
                             When do you want to receive your flowers:
                           </h1>
