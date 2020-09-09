@@ -25,6 +25,7 @@
       </div>
       <% else %>
       <% end %>
+
       <form method="patch" action="flower_subscriptions/<%=current_user.flower_subscriptions.first.id%>/edit" class="button_to">
         <div>
           <input class="order-button" value="Edit" type="submit" />
@@ -47,7 +48,7 @@
        <% when @order.state = "delivered" %>
          <%= image_tag "Flower_status/Status_5.png"%>
        <% else %>
-         <%= "Error: State is not defined/nil" %>
+         <%= image_tag "Flower_status/Status_1.png"%>
        <% end %>
       </div>
     </div>
@@ -85,7 +86,7 @@
         </div>
         <div class="border-bottom">
           <p> <strong> Phone Number </strong> </p>
-          <p id="black-p"><i class="fas fa-phone-alt"></i> +48 76 4278 3829</p>
+          <p id="black-p"><i class="fas fa-phone-alt"></i> <%= current_user.phone_number %></p>
         </div>
         <div class="border-bottom">
           <p> <strong> Address </strong> </p>
