@@ -25,13 +25,13 @@
       </div>
       <% else %>
       <% end %>
-
       <form method="patch" action="flower_subscriptions/<%=current_user.flower_subscriptions.first.id%>/edit" class="button_to">
         <div>
           <input class="order-button" value="Edit" type="submit" />
         </div>
       </form>
     </div>
+
 
     <div class="subscription-status-container col-3">
       <h3> <strong> Status </strong> </h3>
@@ -52,6 +52,10 @@
        <% end %>
       </div>
     </div>
+      <% else %>
+    <% end %>
+
+
 
      <div class="simple-container col-6">
       <div class="simple-calendar">
@@ -59,12 +63,15 @@
         <%= month_calendar(attribute: :delivery_date, events: @bookings)  do |date, bookings| %>
 
         <%= date.day %>
+        <% if @order %>
         <% if date.day == @delivery.day %>
-        <div>
-          <%= image_tag "blume.png", width: 30, class: "delivery-icon"%>
-        </div>
+          <div>
+            <%= image_tag "blume.png", width: 30, class: "delivery-icon"%>
+          </div>
+          <% end %>
+          <% else %>
         <% end %>
-        <% end %>
+    <% end %>
       </div>
     </div>
 
