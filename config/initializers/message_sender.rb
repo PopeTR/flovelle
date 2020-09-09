@@ -19,7 +19,7 @@ class MessageSender
       from:  "+12057075110",
       to:    to,
       body:  message,
-      status_callback: "http://#{host}/orders/#{flower_subscription_id}/status"
+      status_callback: "https://www.#{host}/orders/#{flower_subscription_id}/status"
     )
   end
 end
