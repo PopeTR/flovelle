@@ -1,13 +1,13 @@
 <div class="container">
+  <div class="background-howitworks" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1495030071804-96e2e8b6e25f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80);">
+
+  </div>
   <div class="row">
     <div class="col-12">
 
       <div class="edit-form">
         <div class="edit-form-background-image col-lg-6">
-          <div class="edit-form-image" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1495030071804-96e2e8b6e25f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80);">
-            
-          </div>
-          
+
         </div>
 
         <div class="edit-form-input col-lg-6">
@@ -17,19 +17,19 @@
 
           <%= f.input :size, as: :select, collection: ["Small", "Medium", "Large"],
           input_html: {class: "input-field" },
-          wrapper_html: {class: "wrapper-field"}, label_html: {class: "label-field"} %>
+          wrapper_html: {class: "wrapper-field"}, label_html: {class: "label-field label-color"} %>
 
           <%= f.input :frequency, as: :select, collection: ["Monthly", "Forthnightly", "Weekly"],
           input_html: {class: "input-field" },
-          wrapper_html: {class: "wrapper-field"}, label_html: {class: "label-field"}%>
+          wrapper_html: {class: "wrapper-field"}, label_html: {class: "label-field label-color"}%>
 
           <%= f.input :delivery_day, as: :select, collection: ["Monday", "Tuesday", "Wednesday",
             "Thursday", "Friday", "Saturday", "Sunday"], input_html: {class: "input-field"},
-          wrapper_html: {class: "wrapper-field"}, label_html: {class: "label-field"} %>
+          wrapper_html: {class: "wrapper-field"}, label_html: {class: "label-field label-color"} %>
 
           <%= f.input :time_of_day, as: :select, collection: ["8am-12pm", "13pm-15pm", "15pm-18pm"],
           input_html: {class: "input-field"},
-          wrapper_html: {class: "wrapper-field"}, label_html: {class: "label-field"} %>
+          wrapper_html: {class: "wrapper-field"}, label_html: {class: "label-field label-color"} %>
 
           <%= f.submit :Update %>
         </div>

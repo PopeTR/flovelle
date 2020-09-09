@@ -21,15 +21,15 @@
             <% end %>
             <p>Next Delivery on: <%= @delivery.strftime("%a") %>, <%= @delivery.strftime("%d") %> <%= @delivery.strftime("%b") %></p>
             </p>
-        </div>
-      </div>
-      <% else %>
-      <% end %>
-      <form method="patch" action="flower_subscriptions/<%=current_user.flower_subscriptions.first.id%>/edit" class="button_to">
+
+            <form method="patch" action="flower_subscriptions/<%=current_user.flower_subscriptions.first.id%>/edit" class="button_to">
         <div>
           <input class="order-button" value="Edit" type="submit" />
         </div>
       </form>
+        </div>
+      </div>
+
     </div>
 
 
@@ -78,11 +78,7 @@
     <div class="col-6 account-column">
       <h3> <strong> Personal Information </strong> </h3>
       <div class="account-description">
-        <form method="patch" action="accounts/<%=current_user.id%>/edit" class="button_to">
-          <div>
-            <input class="order-button" value="Edit" type="submit" />
-          </div>
-        </form>
+
         <div class="border-bottom">
           <p> <strong> Name </strong> </p>
           <p id="black-p"><i class="fas fa-user"></i> <%= current_user.first_name %> <%= current_user.last_name %></p>
@@ -100,6 +96,11 @@
           <p> <%= @start_time %>
           <p id="black-p"><i class="fas fa-map-marker-alt"></i> <%=current_user.address%>, <%=current_user.zipcode%></p>
         </div>
+        <form method="patch" action="accounts/<%=current_user.id%>/edit" class="button_to">
+          <div>
+            <input class="order-button" value="Edit" type="submit" />
+          </div>
+        </form>
       </div>
     </div>
   </div>
