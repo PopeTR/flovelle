@@ -58,6 +58,32 @@ class FlowerSubscriptionsController < ApplicationController
     redirect_to accounts_path
   end
 
+  def status
+    @flower_subscription.notification_status = params["MessageStatus"]
+    @flower_subscription.save
+    render nothing: true
+  end
+
+  # def send_initial_notification
+  #   @flower_subscription.status = :paid
+  #   if @flower_subscription.save
+  #     message = "Your subscription has been successfully paid for and will arrive on #{@flower_subscription.delivery_date}!"
+  #     notify(message)
+  #   else
+  #     redirect_with_error
+  #   end
+  # end
+
+  # def send_delivery_notification
+  #   @flower_subscription.status = :delivery
+  #   if @flower_subscription.save
+  #     message = 'Your flowers are arriving today.'
+  #     notify(message)
+  #   else
+  #     redirect_with_error
+  #   end
+  # end
+
   private
 
   def flower_params
