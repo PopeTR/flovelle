@@ -7,6 +7,22 @@
   font-weight: 900;
 }
 
+#flower_subscription_delivery_date {
+  border: 1px solid lightgrey;
+  padding: 5px;
+  border-radius: 5px;
+  color: grey;
+  width: 30vw;
+  background-color: transparent;
+}
+
+.product-customize-date > .input-group.date{
+  margin: 0 auto;
+  align-items: center;
+  display: contents;
+
+}
+
 html {
   scroll-behavior: smooth;
 }
