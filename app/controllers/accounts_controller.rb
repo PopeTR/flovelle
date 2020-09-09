@@ -2,6 +2,9 @@ class AccountsController < ApplicationController
   def index
     if current_user.role == "manager"
       dashboard
+    elsif current_user.flower_subscriptions.empty?
+      @bookings = current_user.flower_subscriptions
+      @order = current_user.flower_subscriptions.first
     else
       @bookings = current_user.flower_subscriptions
       @order = current_user.flower_subscriptions.first
