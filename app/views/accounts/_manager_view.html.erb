@@ -67,7 +67,7 @@
                 </thead>
                 <tbody>
                   <% @flower_subscriptions.each do |subscription| %>
-                  <tr> <td><%= subscription.id %></td> <td>€<%=  subscription.price_cents / 100%></td> <td><%=subscription.frequency%></td> <td><%=subscription.created_at.to_date %></td> <td><%= @users.find(subscription.user_id).first_name %> <%= @users.find(subscription.user_id).last_name %></td> <td id="edit-links"><%= link_to "Edit", edit_flower_subscription_path(subscription.id) %> / Delete</td></tr>
+                  <tr> <td><%= subscription.id %></td> <td>€<%=  subscription.price_cents / 100%></td> <td><%=subscription.frequency%></td> <td><%=subscription.created_at.to_date %></td> <td><%= @users.find(subscription.user_id).first_name %> <%= @users.find(subscription.user_id).last_name %></td> <td id="edit-links"><%= link_to "Edit", edit_flower_subscription_path(subscription.id) %> / <%= link_to "Delete", flower_subscription_path(subscription.id), method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>
                   <% end %>
                 </tbody>
             </table>

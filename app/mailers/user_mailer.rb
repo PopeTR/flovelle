@@ -2,10 +2,10 @@ class UserMailer < ApplicationMailer
   # default from: 'flovelle-dutch@gmail.com'
 
 
-def welcome(user)
-    @user = user # Instance variable => available in view
-    mail(to: @user.email, subject: 'Welcome to Flovelle')
-        # This will render a view in `app/views/user_mailer`!
+def welcome
+  @user = params[:user]
+  mail(to: @user.email, subject: 'Welcome to Flovelle')
+  # This will render a view in `app/views/user_mailer`!
   end
 
 

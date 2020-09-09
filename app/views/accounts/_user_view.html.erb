@@ -25,13 +25,25 @@
       </div>
       <% else %>
       <% end %>
+      <form method="patch" action="flower_subscription/<%=current_user.flower_subscription.id%>/edit" class="button_to">
+        <div>
+          <input class="order-button" value="Edit" type="submit" />
+        </div>
+      </form>
     </div>
 
     <div class="subscription-status-container col-3">
       <h3> <strong> Status </strong> </h3>
       <div class="status-petal ">
-       <% if @order.state = "recieved"%>
+        <% case @order.state %>
+       <% when "received"%>
        <%= image_tag "Flower_status/Status_1.png"%>
+       <% when @order.delivery_date - Date.today == 3.days %>
+       <%= image_tag "Flower_status/Status_2.png"%>
+       <% when @order.delivery_date - Date.today == 2.days %>
+       <%= image_tag "Flower_status/Status_3.png"%>
+       <% when @order.delivery_date - Date.today == 1.days %>
+       <%= image_tag "Flower_status/Status_4.png"%>
        <% elsif @order.state = "delivered" %>
        <%= image_tag "Flower_status/Status_5.png"%>
        <% end %>
