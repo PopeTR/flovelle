@@ -29,7 +29,16 @@
                 <div class="product-card">
                   <div class="product-customize">
 
-                    <h1 class="header-bouquettype">
+
+
+
+
+                    <div class="product-customize-flowers container">
+                      <form class="simple_form new_flower_subscription" id="new_flower_subscription" novalidate="novalidate" action="/flower_subscriptions" accept-charset="UTF-8" method="post">
+                        <input type="hidden" name="authenticity_token" value="am1OVWFikNBqB9tHD46TQGNeI1VymaafKVSF6qD3LxPZCTq/SFxraUeLDdeQ2OvUmCQKWcVS97XylwH3BwgzGg==">
+
+
+                <h1 class="header-bouquettype">
                             What size do you want your bouquet to be?
                           </h1>
                           <hr>
@@ -77,15 +86,10 @@
                             </div>
 
 
-
                     <h1 class="header-flowertype" id="section-2">
                       What kind of flowers would you like in your bouquet?
                     </h1>
                     <hr>
-
-                    <div class="product-customize-flowers container">
-                      <form class="simple_form new_flower_subscription" id="new_flower_subscription" novalidate="novalidate" action="/flower_subscriptions" accept-charset="UTF-8" method="post">
-                        <input type="hidden" name="authenticity_token" value="am1OVWFikNBqB9tHD46TQGNeI1VymaafKVSF6qD3LxPZCTq/SFxraUeLDdeQ2OvUmCQKWcVS97XylwH3BwgzGg==">
 
                         <div class="row justify-content-md-center">
                           <div class="flower-container flower-subscription-images">
@@ -95,12 +99,12 @@
 
                               <div class="form-group radio_buttons required flower-subscription-images">
 
-                                <input type="hidden" name="flower_subscription[images]" value="">
+                                <input type="hidden" name="flower_subscription[preferences]" value="">
                                 <div class="subscription-cards-subscription">
 
                                   <% image_collection.each_with_index do |image, index| %>
                                   <div class="flower-card col-lg-3 col-md-3 col-sm-6 flower-select size-select" data-section="#section-3" >
-                                  <input class="form-check-input flower-form-image-checks radio_buttons required flower-choice-image" type="radio" value="image_tag" name="flower_subscription[images]" id="flower_subscription_image-<%= index %>">
+                                  <input class="form-check-input flower-form-image-checks radio_buttons required flower-choice-image" type="radio" value="<%=flower_types[index] %>" name="flower_subscription[preferences]" id="flower_subscription_image-<%= index %>">
                                   <label class="form-check-label collection_radio_buttons flower-choice-image" for="flower_subscription_image-<%= index %>">
                                     <%= image_tag(image) %>
                                     <p>
