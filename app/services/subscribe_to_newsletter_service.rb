@@ -1,4 +1,4 @@
-# class SubscribeToNewsletterService
+class SubscribeToNewsletterService
 #   def initialize(user)
 #     @user = user
 #     @gibbon = Gibbon::Request.new(api_key: ENV['MAILCHIMP_API_KEY'])
@@ -17,4 +17,4 @@
 #       }
 #     )
 #   end
-# end
+end
