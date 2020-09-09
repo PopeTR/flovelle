@@ -12,7 +12,7 @@ private
 
   def notify(message)
     MessageSender.send_message(
-      @flower_subscription.id, "/", User.find(@flower_subscription.user_id).phone_number, message)
+      @flower_subscription.id, "flovelle.com", User.find(@flower_subscription.user_id).phone_number, message)
     # redirect_to flower_subscriptions_url, notice: 'Message was delivered'
   end
 end
