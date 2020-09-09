@@ -1,5 +1,5 @@
 meta_product_name: "Flovelle"
 meta_title: "Flovelle - Fresh Flowers, To Your Door, Every Week"
 meta_description: "Select your seasonal flowers from our local growers. Your box of flowers will arrive with information on the local supplier"
-meta_image: "Flower-field2.jpeg" # should exist in `app/assets/images/`
+meta_image: "Flower-field2.jpg" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
