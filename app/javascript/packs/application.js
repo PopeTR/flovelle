@@ -37,10 +37,25 @@ document.addEventListener('turbolinks:load', () => {
   initScrollClick();
 
 
+  const closeButton = document.querySelector('#close_button')
 
-  document.querySelector('#cancel_edit').addEventListener('click', event => {
-    document.querySelector('#myModal').remove();
-  })
+  if(closeButton) {
+    closeButton.addEventListener('click', event => {
+      // event.currentTarget.closest('.modal').remove()
+      // document.body.classList.remove("modal-open")
+      // document.querySelector('.modal-backdrop').remove()
+      $("#exampleModal").modal("hide")
+    })
+  }
+
+
+  const cancelButton = document.querySelector('#cancel_edit')
+
+  if(cancelButton) {
+    cancelButton.addEventListener('click', event => {
+      document.querySelector('#myModal').remove();
+    })
+  }
 });
 
 
