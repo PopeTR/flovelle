@@ -25,7 +25,7 @@
       </div>
       <% else %>
       <% end %>
-      <form method="patch" action="flower_subscription/<%=current_user.flower_subscription.id%>/edit" class="button_to">
+      <form method="patch" action="flower_subscriptions/<%=current_user.flower_subscriptions.first.id%>/edit" class="button_to">
         <div>
           <input class="order-button" value="Edit" type="submit" />
         </div>
@@ -37,15 +37,17 @@
       <div class="status-petal ">
         <% case @order.state %>
        <% when "received"%>
-       <%= image_tag "Flower_status/Status_1.png"%>
-       <% when @order.delivery_date - Date.today == 3.days %>
-       <%= image_tag "Flower_status/Status_2.png"%>
-       <% when @order.delivery_date - Date.today == 2.days %>
-       <%= image_tag "Flower_status/Status_3.png"%>
-       <% when @order.delivery_date - Date.today == 1.days %>
-       <%= image_tag "Flower_status/Status_4.png"%>
-       <% elsif @order.state = "delivered" %>
-       <%= image_tag "Flower_status/Status_5.png"%>
+         <%= image_tag "Flower_status/Status_1.png"%>
+       <% when @order.delivery_date.to_date - Date.today.to_date == 3.days %>
+         <%= image_tag "Flower_status/Status_2.png"%>
+       <% when @order.delivery_date.to_date - Date.today.to_date == 2.days %>
+         <%= image_tag "Flower_status/Status_3.png"%>
+       <% when @order.delivery_date.to_date - Date.today.to_date == 1.days %>
+         <%= image_tag "Flower_status/Status_4.png"%>
+       <% when @order.state = "delivered" %>
+         <%= image_tag "Flower_status/Status_5.png"%>
+       <% else %>
+         <%= "Error: State is not defined/nil" %>
        <% end %>
       </div>
     </div>
