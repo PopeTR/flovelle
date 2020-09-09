@@ -99,12 +99,12 @@
 
                               <div class="form-group radio_buttons required flower-subscription-images">
 
-                                <input type="hidden" name="flower_subscription[images]" value="">
+                                <input type="hidden" name="flower_subscription[preferences]" value="">
                                 <div class="subscription-cards-subscription">
 
                                   <% image_collection.each_with_index do |image, index| %>
                                   <div class="flower-card col-lg-3 col-md-3 col-sm-6 flower-select size-select" data-section="#section-3" >
-                                  <input class="form-check-input flower-form-image-checks radio_buttons required flower-choice-image" type="radio" value="image_tag" name="flower_subscription[images]" id="flower_subscription_image-<%= index %>">
+                                  <input class="form-check-input flower-form-image-checks radio_buttons required flower-choice-image" type="radio" value="<%=flower_types[index] %>" name="flower_subscription[preferences]" id="flower_subscription_image-<%= index %>">
                                   <label class="form-check-label collection_radio_buttons flower-choice-image" for="flower_subscription_image-<%= index %>">
                                     <%= image_tag(image) %>
                                     <p>
