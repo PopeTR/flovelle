@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   def welcome
      # This is how you pass value to params[:user] inside mailer definition!
-     UserMailer.with(user: self).welcome.deliver_now
+     # UserMailer.with(user: self).welcome.deliver_now
   end
 
 end
