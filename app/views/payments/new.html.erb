@@ -7,16 +7,17 @@
 
       <div class="col">
         <h1>Checkout summary</h1>
-
-        <p>Purchase of a <strong>
-          <% if @flower_subscription.frequency == 1 %>
-            <p>Monthly, </p>
-          <% elsif @flower_subscription.frequency == 2 %>
-            <p>Fortnightly, </p>
-          <% elsif @flower_subscription.frequency == 4 %>
-            <p>Weekly, </p>
-          <% end %>
-            <%= @flower_subscription.size %> subscription</strong> for <strong><%= humanized_money_with_symbol(@flower_subscription.price_cents/100) %></strong></p>
+        <div class="desciption-pay">
+          <p>Purchase of a <strong>
+            <% if @flower_subscription.frequency == 1 %>
+              Monthly,
+            <% elsif @flower_subscription.frequency == 2 %>
+              Fortnightly,
+            <% elsif @flower_subscription.frequency == 4 %>
+              Weekly,
+            <% end %>
+            <%= @flower_subscription.size %> subscription</strong> for <strong><%= humanized_money_with_symbol(@flower_subscription.price_cents/100) %></strong>. Next Delivery on: <strong><%= @flower_subscription.delivery_date.strftime("%a") %>, <%= @flower_subscription.delivery_date.strftime("%d") %> <%= @flower_subscription.delivery_date.strftime("%b")%>.</strong></p>
+        </div>
         <button id="pay" class="btn btn-primary">Pay</button>
         <script src="https://js.stripe.com/v3/"></script>
         <script>
