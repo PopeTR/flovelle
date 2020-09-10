@@ -4,6 +4,7 @@ class FlowerSubscription < ApplicationRecord
   monetize :price_cents
   validates :size, :frequency, :price_cents, presence: true
   before_update :price_check
+  enum frequency: {Monthly: 1, Forthnightly: 2, Weekly: 4}
 
   def start_time
     self.delivery_date
@@ -20,8 +21,8 @@ class FlowerSubscription < ApplicationRecord
       else self.size == "Large"
         self.price_cents = 5500
       end
-	    
-	end  	
+  	end
   end
+
 
 end

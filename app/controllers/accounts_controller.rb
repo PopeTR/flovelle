@@ -8,7 +8,7 @@ class AccountsController < ApplicationController
     else
       # If they have a delivery
       @bookings = current_user.flower_subscriptions
-      @order = current_user.flower_subscriptions.last
+      @order = current_user.flower_subscriptions.order(updated_at: :asc).last
       @last_delivery = @order.delivery_date
       @delivery = delivery_check
     end
@@ -40,12 +40,11 @@ class AccountsController < ApplicationController
   end
 
   def next_delivery
-    if @order.frequency == 1
+    if @order.Monthly?
       @next_delivery = @last_delivery + 28.days
-    elsif @order.frequency == 2
+    elsif @order.Forthnightly?
       @next_delivery = @last_delivery + 14.days
-
-    elsif @order.frequency == 4
+    elsif @order.Weekly?
       @next_delivery = @last_delivery + 7.days
     end
     @last_delivery = @next_delivery
