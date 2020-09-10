@@ -1,8 +1,13 @@
 
 <div class="container-home">
 <div class="container">
-  <div class="row" style="margin-top: 200px">
-
+  <div class="row row1">
+    <style>
+      .row1 {
+        margin-top: 170px;
+        padding: 20px;
+      }
+    </style>
 
     <% if @order %>
     <div class="subscription-card-container col-lg-9 col-md-6 col-sm-12">
@@ -58,7 +63,7 @@
 
 
      <div class="simple-container col-lg-6 col-md-12 col-sm-12">
-      <div class="simple-calendar">
+      <div class="simple-calendar account-calender">
 
         <%= month_calendar(attribute: :delivery_date, events: @bookings)  do |date, bookings| %>
 
