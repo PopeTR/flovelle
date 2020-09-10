@@ -11,7 +11,7 @@ Rails.application.configure do
   config.eager_load = false
 
 
-  config.hosts << "18190cbfda21.ngrok.io"
+  config.hosts << "f8402e84a65a.ngrok.io"
   # REMOVE LATER, IF NOW IS LATER THEN YOU FORGOT
 
 

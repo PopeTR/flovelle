@@ -4,10 +4,13 @@
 }
 
 .confirmation {
-  margin: 140px auto;
+  margin-top: 160px;
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: calc(100vh - 200px);
+}
+
+.confirmation.col-lg-6.col-sm-9 {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 
@@ -16,15 +19,13 @@
   margin: none;
 }
 
+#subscription-line {
+  margin: 10px 0px 0px 0px;
+}
 
 .picture-container.col-lg-6 {
   padding: 0px;
   margin: 0px;
-}
-
-
-.confirmation-container.row.background {
-  margin: 0px !important;
 }
 
 .row .py-4 .description {
@@ -33,6 +34,6 @@
 
 .col h1 {
   font-weight: 900;
-  margin: 40px 0px;
+  margin: 20px 0px 0px;
 
 }
