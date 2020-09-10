@@ -16,11 +16,11 @@
           <p class="manager-info">New Users this month</p>
         </div>
         <div class="col-lg-3 col-sm-12 farmer-column">
-          <h1 class="manager-data">42</h1>
+          <h1 class="manager-data"><%= @flower_subscriptions.count %></h1>
             <p class="manager-info">Running Subscriptions</p>
         </div>
         <div class="col-lg-3 col-sm-12 farmer-column">
-          <h1 class="manager-data">200</h1>
+          <h1 class="manager-data">€84,000</h1>
             <p class="manager-info">Revenue this month</p>
           <p></p>
         </div>
@@ -29,7 +29,7 @@
   </div>
 
   <div class="farmers-header">
-    <h1>Farmers</h1>
+    <h1>Supplier</h1>
     <hr>
     <div class="container">
       <div class="row">
@@ -67,7 +67,7 @@
                 </thead>
                 <tbody>
                   <% @flower_subscriptions.each do |subscription| %>
-                  <tr> <td><%= subscription.id %></td> <td>€<%=  subscription.price_cents / 100%></td> <td><%=subscription.frequency%></td> <td><%=subscription.created_at.to_date %></td> <td><%= @users.find(subscription.user_id).first_name %> <%= @users.find(subscription.user_id).last_name %></td> <td id="edit-links"><%= link_to "Edit", edit_flower_subscription_path(subscription.id) %> / <%= link_to "Delete", flower_subscription_path(subscription.id), method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>
+                  <tr> <td><%= link_to subscription.id, flower_subscription_path(subscription.id) %></td> <td>€<%=  subscription.price_cents / 100 %></td> <td><%=subscription.frequency%></td> <td><%= subscription.created_at.to_date %></td> <td><%= @users.find(subscription.user_id).first_name %> <%= @users.find(subscription.user_id).last_name %></td> <td id="edit-links"><%= link_to "Edit", edit_flower_subscription_path(subscription.id) %> / <%= link_to "Delete", flower_subscription_path(subscription.id), method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>
                   <% end %>
                 </tbody>
             </table>
