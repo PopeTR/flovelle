@@ -15,8 +15,23 @@
 .subscriptions-header {
   margin-bottom: 40px;
   background-color: white;
-  padding: 40px;
+  padding: 30px;
 }
+
+@media (max-width: 576px) {
+.subscriptions-header h1 {
+  font-size: 32px;
+    // overflow-wrap: anywhere;
+ }
+}
+
+@media (max-width: 320px) {
+  .subscriptions-header h1 {
+  font-size: 28px;
+    // overflow-wrap: anywhere;
+ }
+}
+
 
 .statistics-header {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -28,7 +43,7 @@
 
 .subscriptions-header {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 40px;
+  padding: 30px;
   width: 80vw;
   margin: 0 auto;
   background-color: white;
