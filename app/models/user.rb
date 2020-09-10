@@ -7,7 +7,6 @@ class User < ApplicationRecord
   # validates :name, :address, :zipcode, :role, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
   # this added for the mailing
   after_create :welcome
   private
