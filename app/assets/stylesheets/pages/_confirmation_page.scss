@@ -19,11 +19,12 @@
 
 .picture-container.col-lg-6 {
   padding: 0px;
+  margin: 0px;
 }
 
 
-.confirmation-container .row {
-  margin: 0px;
+.confirmation-container.row.background {
+  margin: 0px !important;
 }
 
 .row .py-4 .description {
