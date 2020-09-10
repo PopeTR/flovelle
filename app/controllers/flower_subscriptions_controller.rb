@@ -16,8 +16,7 @@ class FlowerSubscriptionsController < ApplicationController
   end
 
   def create
-    @flower_subscription = FlowerSubscription.new(params[:flower_subscription]
-      .permit(:preferences, :state, :price_cents, :flower_subscription_sku, :size, :frequency, :delivery_date,  :delivery_day, :time_of_day))
+    @flower_subscription = FlowerSubscription.new(flower_params)
     @flower_subscription.user_id = current_user.id
 
     @flower_subscription = FormatSubscriptionService.new(flower_subscription: @flower_subscription).call
@@ -64,26 +63,6 @@ class FlowerSubscriptionsController < ApplicationController
     @flower_subscription.save
     render nothing: true
   end
-
-  # def send_initial_notification
-  #   @flower_subscription.status = :paid
-  #   if @flower_subscription.save
-  #     message = "Your subscription has been successfully paid for and will arrive on #{@flower_subscription.delivery_date}!"
-  #     notify(message)
-  #   else
-  #     redirect_with_error
-  #   end
-  # end
-
-  # def send_delivery_notification
-  #   @flower_subscription.status = :delivery
-  #   if @flower_subscription.save
-  #     message = 'Your flowers are arriving today.'
-  #     notify(message)
-  #   else
-  #     redirect_with_error
-  #   end
-  # end
 
   private
 

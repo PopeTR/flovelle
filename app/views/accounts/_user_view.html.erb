@@ -10,13 +10,13 @@
       <div class="card-product ">
         <img src="https://images.unsplash.com/photo-1577090727079-a854293d7cd6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" />
         <div class="card-product-infos">
-          <p><strong> Your subscription</strong></p>
+          <p><strong>  <%= link_to "Your subscription", flower_subscription_path(@order) %> </strong></p>
           <p id="black-p"> A <%=@order.size%> bouquet
-            <% if @order.frequency == 1 %>
+            <% if @order.Monthly? %>
               once a month
-            <% elsif @order.frequency == 2 %>
+            <% elsif @order.Forthnightly? %>
               twice a month
-            <% else %>
+            <% else @order.Weekly? %>
               once a week
             <% end %>
             <p>Next Delivery on: <%= @delivery.strftime("%a") %>, <%= @delivery.strftime("%d") %> <%= @delivery.strftime("%b") %></p>
@@ -64,14 +64,15 @@
 
         <%= date.day %>
         <% if @order %>
-        <% if date.day == @delivery.day %>
-          <div>
-            <%= image_tag "blume.png", width: 30, class: "delivery-icon"%>
-          </div>
+          <% if date.day == @delivery.day %>
+
+            <div>
+              <%= image_tag "blume.png", width: 30, class: "delivery-icon"%>
+            </div>
+            <% end %>
+            <% else %>
           <% end %>
-          <% else %>
         <% end %>
-    <% end %>
       </div>
     </div>
 

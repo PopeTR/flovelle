@@ -12,7 +12,7 @@ class FormatSubscriptionService
 
   def format_subscription
     format_size
-    format_frequency
+    # format_frequency
     format_time
   end
 
@@ -27,15 +27,15 @@ class FormatSubscriptionService
     end
   end
 
-  def format_frequency
-    if @flower_subscription.frequency == "Monthly"
-      @flower_subscription.frequency = 1
-    elsif @flower_subscription.frequency == "Forthnightly"
-      @flower_subscription.frequency = 2
-    else @flower_subscription.frequency == "Weekly"
-      @flower_subscription.frequency = 4
-    end
-  end
+  # def format_frequency
+  #   if @flower_subscription.frequency == "Monthly"
+  #     @flower_subscription.frequency = 1
+  #   elsif @flower_subscription.frequency == "Forthnightly"
+  #     @flower_subscription.frequency = 2
+  #   else @flower_subscription.frequency == "Weekly"
+  #     @flower_subscription.frequency = 4
+  #   end
+  # end
 
   def format_time
       # storing the time of day of bouquet
