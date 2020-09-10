@@ -10,7 +10,7 @@ class FlowerSubscriptionsController < ApplicationController
   end
 
   def show
-    @flower_subscription = current_user.flower_subscriptions.find(params[:id])
+    @flower_subscription = FlowerSubscription.find(params[:id])
   end
 
   def new
