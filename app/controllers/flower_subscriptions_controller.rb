@@ -5,8 +5,6 @@ class FlowerSubscriptionsController < ApplicationController
   def index
     @flower_subscriptions = FlowerSubscription.all
     @flower_subscription = FlowerSubscription.new
-      #   MessageSender.send_message(
-      # FlowerSubscription.last.id, "flovelle.com", User.last.phone_number, "hello world")
   end
 
   def show

@@ -1,6 +1,7 @@
 require 'twilio-ruby'
 
-class MessageSender
+class SendSmsService
+
   def self.send_message(flower_subscription_id, host, to, message)
     new.send_message(flower_subscription_id, host, to, message)
   end
@@ -18,7 +19,8 @@ class MessageSender
       from:  "+12057075110",
       to:    to,
       body:  message,
-      status_callback: "https://www.#{host}/orders/#{flower_subscription_id}/status"
+      status_callback: "https://www.#{host}/flower_subscriptions/#{flower_subscription_id}"
     )
   end
+
 end
