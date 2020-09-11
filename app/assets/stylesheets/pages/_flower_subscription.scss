@@ -27,11 +27,12 @@ html {
   scroll-behavior: smooth;
 }
 
-.header-flowertype, .header-datetype, .header-bouquettype, .header-frequencytype {
+.header-flowertype, .header-datetype, .header-bouquettype, .header-frequencytype, .header-timetype {
   font-weight: 900;
   font-size: 26px;
-  margin: 20px;
+  margin: 20px 20px 5px 20px;
 }
+
 #new_flower_subscription {
   display: contents;
   width: 100%;
@@ -61,7 +62,7 @@ html {
 
 .main-title {
 	text-align: center;
-	padding-top: 150px;
+	padding-top: 180px;
 	font-size: 40px;
 }
 
@@ -301,7 +302,7 @@ hr {
 .order-button {
 	background-color: $my-blue;
 	// padding-top: 12px;
-	width: 260px;
+	width: 50vw;
 	&:hover {
 		background-color: $my-orange;
 		border-color: $my-blue;
@@ -321,7 +322,7 @@ label {
 
 .subscription-image img {
   width: 100%;
-  height: 390px;
+  height: 320px;
   object-fit: cover;
   border-radius-top: 5px;
 }
@@ -348,8 +349,3 @@ label {
   margin: 10px 0px;
 }
 
-.header-timetype {
-  font-weight: 900;
-  font-size: 26px;
-  margin: 20px;
-}
