@@ -6,13 +6,13 @@ class Supplier < ApplicationRecord
   def orders_for
     orders = 0
     flower_subscriptions.each do |subscription|
-      if subscription.frequency == 4
+      if subscription.Weekly?
         orders += 1
-      elsif subscription.frequency == 2
+      elsif subscription.Forthnightly?
         first_delivery_week = subscription.delivery_date.strftime("%U").to_i
         current_delivery_week = Date.new().strftime("%U").to_i
         orders += 1 if (current_delivery_week - first_delivery_week).even?
-      elsif subscription.frequency == 1
+      elsif subscription.Monthly?
         first_delivery_week = subscription.delivery_date.strftime("%U").to_i
         current_delivery_week = Date.new().strftime("%U").to_i
         orders += 1 if current_delivery_week - first_delivery_week == 4
