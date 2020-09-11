@@ -3,7 +3,7 @@ class StripeCheckoutSessionService
   def call(event)
     @flower_subscription = FlowerSubscription.find_by(checkout_session_id: event.data.object.id)
     @flower_subscription.update(state: 'paid')
-    message = "Congratulations flower-lover! Your subscription has been successfully paid for and will arrive on #{@flower_subscription.delivery_date.strftime("%a")}, #{@flower_subscription.delivery_date.strftime("%d")} #{@delivery.strftime("%b")}!"
+    message = "Congratulations flower-lover! Your subscription has been successfully paid for and will arrive on #{@flower_subscription.delivery_date.strftime("%a")}, #{@flower_subscription.delivery_date.strftime("%d")} #{@flower_subscription.delivery_date.strftime("%b")}!"
     notify(message)
   end
 
