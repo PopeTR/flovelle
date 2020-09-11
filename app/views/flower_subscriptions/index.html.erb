@@ -260,17 +260,20 @@
                               </div>
                             </div>
                           </fieldset>
-                        </div>
-                      </div>
-
-                        <% if current_user.nil? %>
+                          <% if current_user.nil? %>
                           <button type="button" class="btn btn-flat order-button col-9" id="subscription-button" data-toggle="modal" data-target="#exampleModal">
                         Sign Up & Order Now
                       </button>
                         <% else %>
                           <input type="submit" name="commit" value="Order Now" class="order-button">
                         <% end %>
-                    </form>
+                        </div>
+
+
+                      </div>
+                      </form>
+
+
 
                     <!-- Modal -->
                     <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
