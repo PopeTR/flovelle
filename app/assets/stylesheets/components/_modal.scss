@@ -14,21 +14,51 @@
     left: 0;
     z-index: 99999;
 }
-
 #form-modal {
   // border: 2px solid $my-grey;
   display: grid;
-  margin-top: 100px;
-  padding: 48px;
-  padding-bottom: 34px;
+  padding: 42px;
+  padding-bottom: 30px;
   text-align: center;
+  justify-content: center;
   background-color: #f9f9f9;
   border: none;
   box-shadow: 14px 53px 25px rgba(1,1,1,0.5);
-  width: 500px;
+  width: 400px;
   opacity: 0.96;
+
   border-radius: 5%;
 }
+
+@media (max-width: 520px){
+#form-modal {
+  min-width: 320px;
+    margin: 0;
+
+  }
+}
+
+@media (max-width: 320px){
+#form-modal {
+  min-width: 220px;
+    margin: 0;
+
+  }
+}
+
+@media (max-width: 576px) {
+#form-modal  {
+    margin:0 ;
+  }
+}
+
+@media (max-width: 1100px) {
+#form-modal  {
+    margin: 0;
+   // min-width: 500px;
+  }
+}
+
 
 /* Add some padding and a grey background color to containers */
 .modal-input {
